@@ -1,0 +1,91 @@
+@import '../../customizations.less';
+
+// Default style
+.progressbar {
+  background-color: #d6d6d6;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 3px;
+}
+
+.progressbar > span {
+  background-color: @green-color;
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: 0
+}
+
+// Barra de progresso com cantos arredondados
+.progressbar--round {
+  border-radius: 50px;
+}
+
+// Barra de progresso azul
+.progressbar--blue > span {
+  background-color: @blue-color;
+}
+
+// Barra de progresso vermelha
+.progressbar--red > span {
+  background-color: @red-color;
+}
+
+// Barra de progresso verde
+.progressbar--green > span {
+  background-color: @green-color;
+}
+
+// Barra de progresso amarela
+.progressbar--yellow > span {
+  background-color: @yellow-color;
+}
+
+// Barra de progresso cinza
+.progressbar--gray > span {
+  background-color: @gray-color;
+}
+
+// Barra de progresso branca
+.progressbar--white {
+  background-color: fade(@white-color, 20%);
+
+  & > span {
+    background-color: @white-color;
+  }
+}
+
+// Barra de progresso sem previsão para ser resolvida
+.progressbar--infinite > span {
+  -webkit-animation: progressbar-infinite-animation 1s linear infinite;
+  animation: progressbar-infinite-animation 1s linear infinite;
+  width: 100% !important;
+}
+
+
+
+
+
+@-webkit-keyframes progressbar-infinite-animation {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0)
+  }
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0)
+  }
+}
+
+@keyframes progressbar-infinite-animation {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0)
+  }
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0)
+  }
+}

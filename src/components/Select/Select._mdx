@@ -1,0 +1,85 @@
+---
+name: Select
+route: /components/Select
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Select } from '../../index.js'
+import '../../../dist/styles.css'
+
+# Select
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+```jsx
+import { Select } from 'ios-theme-toolkit'
+
+export default () => (
+  <Select value="second">
+    <option value="first">First</option>
+    <option value="second">Second</option>
+    <option value="third">Third</option>
+  <Select>
+)
+```
+
+## Examples
+
+<Playground>
+  <span className="desc">Default:</span>
+  <Select>
+    <option disabled selected>Select an item</option>
+    <option value="first">First</option>
+    <option value="second">Second</option>
+    <option value="third">Third</option>
+  </Select>
+
+  <span className="desc">Filled and with initial selected item:</span>
+  <Select fill defaultValue="second">
+    <option value="first">First</option>
+    <option value="second">Second</option>
+    <option value="third">Third</option>
+    <div/>
+  </Select>
+
+  <span className="desc">Select block and allow multiple selected items:</span>
+  <Select multiple block fill>
+    <option value="first">First</option>
+    <option value="second">Second</option>
+    <option value="third">Third</option>
+    <option value="fourth">Fourth</option>
+    <option value="fifth">Fifth</option>
+    <option value="sixth">Sixth</option>
+  </Select>
+
+  <span className="desc">With group related options:</span>
+  <Select>
+    <option disabled selected>Select an item</option>
+    <optgroup label="1-2">
+      <option value="first">First</option>
+      <option value="second">Second</option>
+    </optgroup>
+    <optgroup label="3-4">
+      <option value="third">Third</option>
+      <option value="fourth">Fourth</option>
+    </optgroup>
+    <optgroup label="5-6">
+      <option value="fifth">Fifth</option>
+      <option value="sixth">Sixth</option>
+    </optgroup>
+  </Select>
+
+  <span className="desc">Disabled:</span>
+  <Select disabled>
+    <option value="first">First</option>
+  </Select>
+
+  <style>{".react-live-preview .desc { display: block; font-weight: bold; margin-top: 20px }"}</style>
+</Playground>
+
+## Props
+
+<PropsTable of={ Select } />
+
+All the properties which are not listed above will be transferred to the <\select\> tag, so, It accepts all props which native select tag support.

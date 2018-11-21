@@ -1,0 +1,45 @@
+---
+name: Spinner
+route: /components/Spinner
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Spinner } from '../../index.js'
+import '../../../dist/styles.css'
+
+# Spinner
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+```jsx
+import { Spinner } from 'ios-theme-toolkit'
+
+export default () => (
+  <Spinner></Spinner>
+)
+```
+
+## Examples
+
+<Playground>
+  <style>{".react-live-preview .desc { display: block; font-weight: bold; margin-top: 20px; }"}</style>
+  
+  <span className="desc">Default size (32px):</span>
+  <Spinner />
+
+  <span className="desc">Small (20px):</span>
+  <Spinner size="small" />
+
+  <span className="desc">Big (52px):</span>
+  <Spinner size="big" />
+
+  <span className="desc">Custom size (~px):</span>
+  <Spinner size={100} />
+</Playground>
+
+## Props
+
+<PropsTable of={ Spinner } />
+
+All the properties which are not listed above will be transferred to the \<div\> tag.

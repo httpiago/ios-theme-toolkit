@@ -1,0 +1,59 @@
+---
+name: Checkbox
+route: /components/Checkbox
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Checkbox } from '../../index.js'
+import '../../../dist/styles.css'
+
+# Checkbox
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+```jsx
+import { Checkbox } from 'ios-theme-toolkit'
+
+export default () => (
+  <Checkbox checked={true} />
+)
+```
+
+## Examples
+
+<Playground>
+  <span className="desc">Default style and size (22px):</span>
+  <Checkbox defaultChecked={true} />
+
+  <span className="desc">Colorful:</span>
+  <Checkbox defaultChecked={true} color="green" />
+  <Checkbox defaultChecked={true} color="red" />
+  <Checkbox defaultChecked={true} color="yellow" />
+  <Checkbox defaultChecked={true} color="gray"/>
+  <Checkbox defaultChecked={true} color="white"/>
+
+  <span className="desc">Disabled:</span>
+  <Checkbox defaultChecked={true} disabled />
+
+  <span className="desc">Not checked:</span>
+  <Checkbox defaultChecked={false} />
+
+  <span className="desc">Small (16px):</span>
+  <Checkbox defaultChecked={true} size="small"/>
+
+  <span className="desc">Big (28px):</span>
+  <Checkbox defaultChecked={true} size="big" />
+
+  <span className="desc">Custom size (~px):</span>
+  <Checkbox defaultChecked={true} size={100} />
+
+  <style>{".react-live-preview .desc { display: block; font-weight: bold; margin-top: 20px; }"}</style>
+  <style>{".react-live-preview .checkbox { margin: 0 3px; }"}</style>
+</Playground>
+
+## Props
+
+<PropsTable of={ Checkbox } />
+
+All the properties which are not listed above will be transferred to the <\input type="checkbox"\> tag, so, It accepts all props which native checkbox support.

@@ -1,0 +1,118 @@
+@import '../../customizations.less';
+
+// Default styles
+.checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #FFF;
+  border: 1px solid #c7c7cc;
+  border-radius: 24%;
+  position: relative;
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+  outline: 0;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+// Checked state
+.checkbox:checked {
+  border: none;
+  background-color: @blue-color;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHg9JzBweCcgeT0nMHB4JyB2aWV3Qm94PScwIDAgMTIgOScgeG1sOnNwYWNlPSdwcmVzZXJ2ZSc+PHBvbHlnb24gZmlsbD0nI2ZmZmZmZicgcG9pbnRzPScxMiwwLjcgMTEuMywwIDMuOSw3LjQgMC43LDQuMiAwLDQuOSAzLjksOC44IDMuOSw4LjggMy45LDguOCAnLz48L3N2Zz4=);
+  background-size: 60%;
+}
+
+// focus
+.checkbox:not(:active):focus {
+  box-shadow: 0 0 0 3px fade(@blue-color, 30%);
+}
+
+.checkbox[disabled] {
+  opacity: .6;
+  pointer-events: none;
+  cursor: default;
+}
+
+// Checkbox pequeno
+.checkbox--small {
+  height: 16px;
+  width: 16px;
+}
+
+// Checkbox grande
+.checkbox--big {
+  height: 28px;
+  width: 28px;
+}
+
+// Checkbox com cor azul
+.checkbox--blue {
+  &:checked {
+    background-color: @blue-color;
+  }
+
+  &:not(:active):focus {
+    box-shadow: 0 0 0 3px fade(@blue-color, 30%);
+  }
+}
+
+// Checkbox com cor vermelha
+.checkbox--red {
+  &:checked {
+    background-color: @red-color;
+  }
+
+  &:not(:active):focus {
+    box-shadow: 0 0 0 3px fade(@red-color, 30%);
+  }
+}
+
+// Checkbox com cor amarela
+.checkbox--yellow {
+  &:checked {
+    background-color: @yellow-color;
+  }
+
+  &:not(:active):focus {
+    box-shadow: 0 0 0 3px fade(@yellow-color, 30%);
+  }
+}
+
+// Checkbox com cor verde
+.checkbox--green {
+  &:checked {
+    background-color: @green-color;
+  }
+
+  &:not(:active):focus {
+    box-shadow: 0 0 0 3px fade(@green-color, 30%);
+  }
+}
+
+// Checkbox com cor cinza
+.checkbox--gray {
+  &:checked {
+    background-color: @gray-color;
+  }
+
+  &:not(:active):focus {
+    box-shadow: 0 0 0 3px fade(@gray-color, 30%);
+  }
+}
+
+// Checkbox com cor branca
+.checkbox--white {
+  &:checked {
+    background-color: @white-color;
+  }
+
+  &:not(:active):focus {
+    box-shadow: 0 0 0 3px fade(@white-color, 30%);
+  }
+}

@@ -1,0 +1,42 @@
+---
+name: RangeSlider
+route: /components/RangeSlider
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { RangeSlider } from '../../index.js'
+import '../../../dist/styles.css'
+
+# RangeSlider
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+```jsx
+import { RangeSlider } from 'ios-theme-toolkit'
+
+export default () => (
+  <RangeSlider value={30} />
+)
+```
+
+## Examples
+
+<Playground>
+  <span className="desc">Default:</span>
+  <RangeSlider min={0} max={50} defaultValue={25} />
+
+  <span className="desc">Range that occupies the entire horizontal space:</span>
+  <RangeSlider block min={0} max={100} defaultValue={30} />
+
+  <span className="desc">Disabled:</span>
+  <RangeSlider disabled defaultValue={75} />
+
+  <style>{".react-live-preview .desc { display: block; font-weight: bold; margin-top: 20px }"}</style>
+</Playground>
+
+## Props
+
+<PropsTable of={ RangeSlider } />
+
+All the properties which are not listed above will be transferred to the <\input type="range"\> tag, so, It accepts all props which native input support.

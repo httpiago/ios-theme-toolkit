@@ -1,0 +1,49 @@
+---
+name: ButtonGroup
+route: /components/ButtonGroup
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { ButtonGroup, Button } from '../../index.js'
+import '../../../dist/styles.css'
+
+# Grouped buttons (segmented)
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+```jsx
+import { ButtonGroup, Button } from 'ios-theme-toolkit'
+
+export default () => (
+  <ButtonGroup>
+    <Button>First</Button>
+    <Button fill>Second</Button>
+    <Button>Third</Button>
+  </ButtonGroup>
+)
+```
+
+## Examples
+
+<Playground>
+  <ButtonGroup>
+    <Button>First</Button>
+    <Button fill>Second</Button>
+    <Button>Third</Button>
+    <Button>Fourth</Button>
+  </ButtonGroup>
+
+  <ButtonGroup round>
+    <Button>First</Button>
+    <Button>Second</Button>
+    <Button fill>Third</Button>
+    <Button>Fourth</Button>
+  </ButtonGroup>
+</Playground>
+
+## Props
+
+<PropsTable of={ ButtonGroup } />
+
+All the properties which are not listed above will be transferred to the \<div class="button-group"\> tag.

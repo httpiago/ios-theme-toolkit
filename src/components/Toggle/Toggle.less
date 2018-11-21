@@ -1,0 +1,148 @@
+@import '../../customizations.less';
+
+@toggle-selector: .toggle[type=checkbox];
+
+// Esconder o input[type="checkbox"]
+@{toggle-selector} {
+  -webkit-appearance: none;
+  appearance: none;
+  visibility: hidden;
+  outline: none;
+  margin: 0px;
+  width: 0px;
+  height: 0px;
+}
+
+// Default styles
+@{toggle-selector} + .toggle__icon {
+  background: #d6d6d6;
+  border-radius: 1000px;
+  width: 52px;
+  height: 32px;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+
+  // Bolinha dentro do toggle
+  &::after {
+    background: #fff;
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.3);
+    box-shadow: 0 2px 4px rgba(0,0,0,.3);
+    border-radius: 100px;
+    position: absolute;
+    content: '';
+    height: 27px;
+    width: 27px;
+    z-index: 2;
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    top: 2px;
+    left: 2.5px;
+  }
+}
+
+// Efeito de foco no toggle
+@{toggle-selector}:not(:active):focus + .toggle__icon {
+  box-shadow: 0 0 0 3px fade(@gray-color, 10%);
+}
+
+// Toggle checked
+@{toggle-selector}:checked + .toggle__icon {
+  background-color: @green-color;
+
+  // Bolinha dentro do toggle
+  &::after {
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+
+// Toggle desabilitado
+@{toggle-selector}[disabled] + .toggle__icon {
+  opacity: .6;
+  pointer-events: none;
+  cursor: default;
+}
+
+// Toggle pequeno
+.toggle--small[type=checkbox] + .toggle__icon {
+  width: 42px;
+  height: 24px;
+
+  // Bolinha dentro do toggle
+  &::after {
+    width: 19px;
+    height: 19px;
+    top: 2px;
+  }
+}
+.toggle--small[type=checkbox]:checked + .toggle__icon::after {
+  -webkit-transform: translateX(18px);
+  transform: translateX(18px);
+}
+
+// Toggle grande
+.toggle--big[type=checkbox] + .toggle__icon {
+  width: 66px;
+  height: 40px;
+
+  // Bolinha dentro do toggle
+  &::after {
+    width: 32px;
+    height: 32px;
+    top: 3px;
+    left: 3px;
+  }
+}
+.toggle--big[type=checkbox]:checked + .toggle__icon::after {
+  -webkit-transform: translateX(27px);
+  transform: translateX(27px);
+}
+
+// Toggle com cor azul
+@{toggle-selector}.toggle--blue:checked + .toggle__icon {
+  background-color: @blue-color;
+}
+// Foco com cor azul
+@{toggle-selector}.toggle--blue:checked:not(:active):focus + .toggle__icon {
+  box-shadow: 0 0 0 3px fade(@blue-color, 30%);
+}
+
+// Toggle com cor vermela
+@{toggle-selector}.toggle--red:checked + .toggle__icon {
+  background-color: @red-color;
+}
+// Foco com cor vermelha
+@{toggle-selector}.toggle--red:checked:not(:active):focus + .toggle__icon {
+  box-shadow: 0 0 0 3px fade(@red-color, 30%);
+}
+
+// Toggle com cor amarela
+@{toggle-selector}.toggle--yellow:checked + .toggle__icon {
+  background-color: @yellow-color;
+}
+// Foco com cor cinza
+@{toggle-selector}.toggle--yellow:checked:not(:active):focus + .toggle__icon {
+  box-shadow: 0 0 0 3px fade(@yellow-color, 30%);
+}
+
+// Toggle com cor cinza
+@{toggle-selector}.toggle--gray:checked + .toggle__icon {
+  background-color: @gray-color;
+}
+// Foco com cor cinza
+@{toggle-selector}.toggle--gray:checked:not(:active):focus + .toggle__icon {
+  box-shadow: 0 0 0 3px fade(@gray-color, 30%);
+}

@@ -1,0 +1,49 @@
+---
+name: Avatar
+route: /components/Avatar
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Avatar } from '../../index.js'
+import '../../../dist/styles.css'
+
+# Avatar
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+```jsx
+import { Avatar } from 'ios-theme-toolkit'
+
+export default () => (
+  <Avatar src="" />
+)
+```
+
+## Examples
+
+<Playground>  
+  <span className="desc">Desfault shape and size (32px):</span>
+  <Avatar src="https://uinames.com/api/photos/male/6.jpg" />
+
+  <span className="desc">Round edges:</span>
+  <Avatar src="https://uinames.com/api/photos/male/6.jpg" round />
+  
+  <span className="desc">Small (24px):</span>
+  <Avatar src="https://uinames.com/api/photos/male/15.jpg" round size="small" />
+
+  <span className="desc">Big (48px):</span>
+  <Avatar src="https://uinames.com/api/photos/male/20.jpg" round size="big" />
+
+  <span className="desc">Custom size (~px):</span>
+  <Avatar src="https://uinames.com/api/photos/female/6.jpg" round size={150} />
+  
+  <style>{".avatar { margin: 0 6px}"}</style>
+  <style>{".react-live-preview .desc { display: block; font-weight: bold; margin-top: 20px; }"}</style>
+</Playground>
+
+## Props
+
+<PropsTable of={ Avatar } />
+
+All the properties which are not listed above will be transferred to the \<img\> tag, so, It accepts all props which native img support.

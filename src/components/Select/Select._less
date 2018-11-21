@@ -1,0 +1,109 @@
+@import '../../customizations.less';
+
+.select-input {
+  background-color: transparent;
+  border: 1px solid @gray-color;
+  color: @gray-color;
+  border-radius: @base-border-radius;
+  text-decoration: none;
+  text-align: left;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  height: 30px;
+  width: initial;
+  position: relative;
+  cursor: pointer;
+  outline: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+
+  & select {
+    background-color: transparent;
+    border: none;
+    border-radius: @base-border-radius;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    overflow: hidden;
+    outline: 0;
+    margin-top: -1px;
+    padding: 0 20px 0 6px;
+    font-family: @font-family;
+    font-size: @font-size; 
+    line-height: 26px;
+    height: 100%;
+    width: 100%;
+    top: -1px;
+  }
+
+  &::after {
+    content: '';
+    border-color: transparent;
+    border-bottom-color: transparent;
+    border-top-color: #999;
+    border-style: solid dashed dashed;
+    border-width: 5px 5px 0;
+    pointer-events: none;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 12px;
+    right: 8px;
+  }
+}
+
+// Focus
+.select-input select:not(:active):focus {
+  box-shadow: 0 0 0 4px fade(@gray-color, 20%);
+}
+
+.select-input select:active {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+// Disabled select
+.select-input select[disabled] {
+  opacity: .6;
+  pointer-events: none;
+  cursor: default;
+}
+
+// Block style
+.select-input--block {
+  width: 100%;
+  height: 120px;
+  margin: 6px 0;
+
+  & select {
+    width: 100%;
+  }
+}
+
+// Preenchido
+.select-input--fill {
+  border-color: transparent;
+
+  & select {
+    background-color: rgba(0, 0, 0, .12);
+    border-color: transparent;
+    color: #333;
+
+    &:active {
+      background-color: rgba(0, 0, 0, .2);
+    }
+  }
+}
+
+// Sem bordas
+.select-input--outline select {
+  border-color: transparent !important;
+}
+
+.select-input--multiple::after {
+  content: none !important;
+}

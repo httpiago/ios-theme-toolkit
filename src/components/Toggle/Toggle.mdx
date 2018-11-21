@@ -1,0 +1,63 @@
+---
+name: Toggle
+route: /components/Toggle
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Toggle } from '../../index.js'
+import '../../../dist/styles.css'
+
+# Toggle
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+```jsx
+import { Toggle } from 'ios-theme-toolkit'
+
+export default () => (
+  <label>
+    <Toggle checked={true} /> Label text
+  </label>
+)
+```
+
+## Examples
+
+<Playground>
+  <label>
+    <Toggle defaultChecked name="toggle-demo" value="wifi" /> Green (default)
+  </label>
+
+  <label>
+    <Toggle color="blue" name="toggle-demo" value="gps" defaultChecked={true} /> Blue
+  </label>
+
+  <label>
+    <Toggle color="red" name="toggle-demo" value="bluetooth" defaultChecked={true} disabled /> Red (Disabled)
+  </label>
+
+  <label>
+    <Toggle color="yellow" name="toggle-demo" value="sync" defaultChecked={false} /> Yellow
+  </label>
+
+  <label>
+    <Toggle color="gray" name="toggle-demo" value="battery" defaultChecked={true} /> Gray
+  </label>
+
+  <label>
+    <Toggle size="small" name="toggle-demo" value="small" defaultChecked /> Small toggle
+  </label>
+
+  <label>
+    <Toggle size="big" name="toggle-demo" value="small" defaultChecked /> Big toggle
+  </label>
+
+  <style>{".react-live-preview label { display: block; padding: 6px 0; } .react-live-preview .toggle__icon { margin-right: 6px !important; }"}</style>
+</Playground>
+
+## Props
+
+<PropsTable of={ Toggle } />
+
+All the properties which are not listed above will be transferred to the \<input type="checkbox"\> tag, so, It accepts all props which native checkbox support.

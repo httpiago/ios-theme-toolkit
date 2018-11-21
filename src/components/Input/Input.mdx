@@ -1,0 +1,87 @@
+---
+name: Input
+route: /components/Input
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Input } from '../../index.js'
+import '../../../dist/styles.css'
+
+# Input
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+**NOTE: This package does not provide any form of data validation, I recommend you take a look at [formik](https://github.com/jaredpalmer/formik).**
+
+```jsx
+import { Input } from 'ios-theme-toolkit'
+
+export default () => (
+  <Input value="Hello world" />
+)
+```
+
+## Examples
+
+<Playground>
+  <span className="desc">Without filling:</span>
+  <Input
+    placeholder="Type your name..."
+    onChange={(e) => console.log('input changed', e.target.value)}
+  />
+
+  <span className="desc">With fill:</span>
+  <Input
+    fill
+    placeholder="Type your email"
+  />
+
+  <span className="desc">Textarea:</span>
+  <Input
+    htmlType="textarea"
+    fill
+    block
+    placeholder="Type your text here..."
+    defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in vulputate enim. Duis aliquet imperdiet viverra. Suspendisse vestibulum urna eget nisl sollicitudin pulvinar. Suspendisse porta nibh diam, varius accumsan massa sodales sed."
+    style={{ height: 140 }}
+  />
+
+  <span className="desc">Rounded edges:</span>
+  <Input
+    fill
+    round
+    placeholder="Input with rounded edges"
+  />
+
+  <span className="desc">Invalid input:</span>
+  <Input
+    fill
+    error
+    required
+    defaultValue="Input invalid"
+  />
+  <span className="error">Digite um valor válido</span>
+  <span className="desc">Disabled:</span>
+  <Input
+    fill
+    disabled
+    placeholder="Type your new password"
+  />
+
+  <span className="desc">Read-only:</span>
+  <Input
+    fill
+    disabled
+    readOnly
+    defaultValue="Read only input"
+  />
+
+  <style>{".react-live-preview .desc { display: block; font-weight: bold; margin-top: 20px }"}</style>
+</Playground>
+
+## Props
+
+<PropsTable of={ Input } />
+
+All the properties which are not listed above will be transferred to the \<input\> (or \<Textarea\>) tag, so, It accepts all props which native input support.

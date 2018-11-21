@@ -1,0 +1,45 @@
+---
+name: ProgressBar
+route: /components/ProgressBar
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { ProgressBar } from '../../index.js'
+import '../../../dist/styles.css'
+
+# ProgressBar
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+```jsx
+import { ProgressBar } from 'ios-theme-toolkit'
+
+export default () => (
+  <ProgressBar value={80} />
+)
+```
+
+## Examples
+
+<Playground>
+  <style>{".react-live-preview .progressbar { margin: 24px 0; }"}</style>
+
+  <ProgressBar value={30} />
+
+  <ProgressBar value={80} color="red" />
+
+  <ProgressBar value={50} color="green" height={10} round />
+
+  <ProgressBar value={100} color="yellow" />
+
+  <ProgressBar value={65} color="gray" />
+
+  <ProgressBar color="blue" infinite />
+</Playground>
+
+## Props
+
+<PropsTable of={ ProgressBar } />
+
+All the properties which are not listed above will be transferred to the \<div\> tag.

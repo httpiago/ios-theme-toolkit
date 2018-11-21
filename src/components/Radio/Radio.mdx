@@ -1,0 +1,59 @@
+---
+name: Radio
+route: /components/Radio
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Radio } from '../../index.js'
+import '../../../dist/styles.css'
+
+# Radio
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+```jsx
+import { Radio } from 'ios-theme-toolkit'
+
+export default () => (
+  <Radio checked={true} />
+)
+```
+
+## Examples
+
+<Playground>
+  <span className="desc">Default style and size (22px):</span>
+  <Radio checked={true} />
+
+  <span className="desc">Colorful:</span>
+  <Radio checked={true} color="green" />
+  <Radio checked={true} color="red" />
+  <Radio checked={true} color="yellow" />
+  <Radio checked={true} color="gray"/>
+  <Radio checked={true} color="white"/>
+
+  <span className="desc">Disabled:</span>
+  <Radio checked={true} disabled />
+
+  <span className="desc">Not checked:</span>
+  <Radio checked={false} />
+
+  <span className="desc">Small (16px):</span>
+  <Radio checked={true} size="small"/>
+
+  <span className="desc">Big (28px):</span>
+  <Radio checked={true} size="big" />
+
+  <span className="desc">Custom size (~px):</span>
+  <Radio checked={true} size={100} />
+
+  <style>{".react-live-preview .desc { display: block; font-weight: bold; margin-top: 20px; }"}</style>
+  <style>{".react-live-preview .radio { margin: 0 3px; }"}</style>
+</Playground>
+
+## Props
+
+<PropsTable of={ Radio } />
+
+All the properties which are not listed above will be transferred to the <\input type="radio"\> tag, so, It accepts all props which native radio support.

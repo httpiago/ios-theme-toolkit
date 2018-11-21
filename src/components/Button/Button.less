@@ -1,0 +1,245 @@
+@import '../../customizations.less';
+
+// Default style
+.button {
+  background-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid @gray-color;
+  color: @gray-color;
+  border-radius: @base-border-radius;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0;
+  font-size: @font-size;
+  line-height: 26px;
+  padding: 0 10px;
+  height: 30px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: relative;
+  overflow: hidden;
+  font-family: @font-family;
+  cursor: pointer;
+  outline: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.button:hover {
+
+}
+
+// focus
+.button:not(:active):focus {
+  box-shadow: 0 0 0 3px fade(@gray-color, 50%);
+  z-index: 10;
+}
+
+// Botão desativado
+.button[disabled] {
+  background-color: @gray-color;
+  border-color: transparent;
+  color: #FFF;
+  opacity: .7;
+  pointer-events: none;
+}
+
+// Botão sem bordas
+.button--outline {
+  border-color: transparent !important;
+}
+
+// Botão com preenchimento
+.button--fill {
+  background-color: @gray-color;
+  border-color: transparent;
+  color: #FFF;
+
+  &:active {
+    opacity: .7;
+  }
+}
+
+// Botão com cantos arredondados
+.button--round {
+  border-radius: 30px;
+}
+
+// Botão que ocupa todo o espaço horizontal
+.button--block {
+  display: block;
+  margin: 6px 0;
+  width: 100%;
+}
+
+// botão com texto em caixa alta
+.button--uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+// Botão grande
+.button--big {
+  font-size: 17px;
+  line-height: 42px;
+  padding: 0 14px;
+  height: 44px;
+}
+
+// Botão pequeno
+.button--small {
+  height: 26px;
+  padding: 0 8px;
+  line-height: 22px;
+  border-width: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.button--onlyIcon {
+  padding: 1px 5px 0;
+  margin-right: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444
+}
+
+// Botão com cor azul
+.button--blue {
+  border-color: @blue-color;
+  color: @blue-color;
+
+  &:not(.button--fill):active {
+    background-color: fade(@blue-color, 10%);
+  }
+
+  &:not(:active):focus {
+    box-shadow: 0 0 0 3px fade(@blue-color, 30%);
+    z-index: 10;
+  }
+
+  // Botão azul com preenchimento
+  &.button--fill {
+    background-color: @blue-color;
+    border-color: transparent;
+    color: #FFF;
+  }
+}
+
+// Botão com cor vermelha
+.button--red {
+  border-color: @red-color;
+  color: @red-color;
+
+  &:not(.button--fill):active {
+    background-color: fade(@red-color, 10%);
+  }
+
+  &:not(:active):focus {
+    box-shadow: 0 0 0 3px fade(@red-color, 50%);
+    z-index: 10;
+  }
+
+  // botão vermelho com preenchimento
+  &.button--fill {
+    background-color: @red-color;
+    border-color: transparent;
+    color: #FFF;
+  }
+}
+
+// Botão com cor amarela
+.button--yellow {
+  border-color: @yellow-color;
+  color: darken(@yellow-color, 40%);
+
+  &:not(.button--fill):active {
+    background-color: fade(@yellow-color, 10%);
+  }
+
+  &:not(:active):focus {
+    box-shadow: 0 0 0 3px fade(@yellow-color, 50%);
+    z-index: 10;
+  }
+
+  // Botão amarelo com preenchimento
+  &.button--fill {
+    background-color: @yellow-color;
+    border-color: transparent;
+    color: darken(@yellow-color, 40%);
+  }
+}
+
+// Botão com cor verde
+.button--green {
+  border-color: @green-color;
+  color: @green-color;
+
+  &:not(.button--fill):active {
+    background-color: fade(@green-color, 10%);
+  }
+
+  &:not(:active):focus {
+    box-shadow: 0 0 0 3px fade(@green-color, 50%);
+    z-index: 10;
+  }
+
+  // Botão verde com preenchimento
+  &.button--fill {
+    background-color: @green-color;
+    border-color: transparent;
+    color: #FFF;
+  }
+}
+
+// Botão com cor cinza
+.button--gray {
+  border-color: @gray-color;
+  color: @gray-color;
+
+  &:not(.button--fill):active {
+    background-color: fade(@gray-color, 10%);
+  }
+
+  &:not(:active):focus {
+    box-shadow: 0 0 0 3px fade(@gray-color, 50%);
+    z-index: 10;
+  }
+
+  // Botão verde com preenchimento
+  &.button--fill {
+    background-color: @gray-color;
+    border-color: transparent;
+    color: #FFF;
+  }
+}
+
+// Botão com cor vermelha
+.button--white {
+  border-color: @white-color;
+  color: @white-color;
+
+  &:not(.button--fill):active {
+    background-color: fade(@white-color, 10%);
+  }
+
+  &:not(:active):focus {
+    box-shadow: 0 0 0 3px fade(@white-color, 50%);
+    z-index: 10;
+  }
+
+  // botão vermelho com preenchimento
+  &.button--fill {
+    background-color: @white-color;
+    border-color: transparent;
+    color: #333;
+  }
+}

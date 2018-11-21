@@ -1,0 +1,54 @@
+---
+name: Badge
+route: /components/Badge
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Badge } from '../../index.js'
+import '../../../dist/styles.css'
+
+# Badge
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+```jsx
+import { Badge } from 'ios-theme-toolkit'
+
+export default () => (
+  <Badge color="red">New!</Badge>
+)
+```
+
+## Examples
+
+<Playground>
+  <span className="desc">Default style and size (20px):</span>
+  <Badge>0</Badge>
+
+  <span className="desc">Colorful:</span>
+  <Badge color="blue">1</Badge>
+  <Badge color="red">2</Badge>
+  <Badge color="yellow">3</Badge>
+  <Badge color="green">4</Badge>
+  <Badge color="gray">5</Badge>
+  <Badge color="white">6</Badge>
+  <Badge color="black">7</Badge>
+
+  <span className="desc">With text in uppercase:</span>
+  <Badge uppercase color="red">New!</Badge>
+
+  <span className="desc">Small (16px):</span>
+  <Badge size="small" color="blue">8</Badge>
+
+  <span className="desc">Big (px):</span>
+  <Badge size="big" color="blue">10</Badge>
+
+  <style>{".react-live-preview .desc { display: block; font-weight: bold; margin-top: 20px; }"}</style>
+</Playground>
+
+## Props
+
+<PropsTable of={ Badge } />
+
+All the properties which are not listed above will be transferred to the element tag, so, It accepts all props which native button support.
