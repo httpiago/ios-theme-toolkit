@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { mapClassList } from '../../Utils'
 
@@ -46,7 +46,7 @@ List.Item = function({ children, href, target, after, media, className: aditiona
   })
 
   const content = (
-    <Fragment>
+    <React.Fragment>
       {media && (<div className="list__item__media">{media}</div>)}
 
       <div className="list__item__content">
@@ -54,7 +54,7 @@ List.Item = function({ children, href, target, after, media, className: aditiona
 
         {after && (<div className="list__item__after">{after}</div>)}
       </div>
-    </Fragment>
+    </React.Fragment>
   )
 
   return (

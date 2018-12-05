@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { mapClassList } from '../../Utils'
 import Portal from '../Portal/Portal'
@@ -174,7 +174,7 @@ export default class Popover extends React.Component {
     const { isOpen, popoverPosition, arrowPosition } = this.state
 
     return (
-      <Fragment>
+      <React.Fragment>
         <span ref={this.childrenRef}>
           {children}
         </span>
@@ -194,7 +194,7 @@ export default class Popover extends React.Component {
             </div>
           </Portal>
         )}
-      </Fragment>
+      </React.Fragment>
     )
   }
 }
