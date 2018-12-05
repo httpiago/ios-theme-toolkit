@@ -7,7 +7,7 @@ import Portal from '../Portal/Portal'
 /**
  * Modal component.
  *
- * @since 0.2.0
+ * @since 0.3.0
  * @see https://httpiago.github.io/ios-theme-toolkit/#/components/Modal
  *
  * @todo Add ability to close by pressing the ESC key when the react hooks is added
