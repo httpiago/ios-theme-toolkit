@@ -68,14 +68,8 @@ View list of well-documented commands in [gulpfile.js](/gulpfile.js).
 - [ ] Adicionar mais variações de input na documentação.
 
 ### New components to be made:
-- Toast
-- Modal
-  - Alert
-  - Confirm
-  - Prompt
-  - Vertical buttons
-  - Custom modals
-- Action sheet
+
+See in [https://github.com/httpiago/ios-theme-toolkit/projects/1](https://github.com/httpiago/ios-theme-toolkit/projects/1)
 
 ## FAQ
 
