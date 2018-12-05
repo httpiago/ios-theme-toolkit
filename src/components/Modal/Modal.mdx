@@ -1,0 +1,67 @@
+---
+name: Modal
+route: /components/Modal
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Modal } from '../../index.js'
+import '../../../dist/styles.css'
+import ModalExample from './ModalExample'
+
+# Modal
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+Note:  This component has no state (a controlled component), you must provide the visibility state of the component and close it "manually".
+
+See more in the example below:
+
+```jsx
+import { Modal } from 'ios-theme-toolkit'
+
+class ModalExample extends React.Component {
+  state = {
+    modalVisibility: false
+  }
+
+  openModal = () => {
+    this.setState({ modalVisibility: true })
+  }
+
+  closeModal = () => {
+    this.setState({ modalVisibility: false })
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <Modal
+          visible={this.state.modalVisibility}
+          onRequestClose={this.closeModal}
+          title="Hello world!"
+          content="Olá mundo!"
+          buttons={[
+            <Button onClick={this.closeModal}>Close</Button>,
+            <Button onClick={this.closeModal}>Hello</Button>,
+          ]}
+        />
+
+        <Button fill onClick={this.openModal}>Open modal</Button>
+      </React.Fragment>
+    )
+  }
+}
+```
+
+## Examples
+
+<Playground>
+  <ModalExample />
+</Playground>
+
+## Props
+
+<PropsTable of={ Modal } />
+
+All the properties which are not listed above will be transferred to the \<div class="modal"\> tag.

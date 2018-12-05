@@ -15,6 +15,7 @@ import Portal from './components/Portal/Portal'
 import Card from './components/Card/Card'
 import Tooltip from './components/Tooltip/Tooltip'
 import List from './components/List/List'
+import Modal from './components/Modal/Modal'
 
 export {
   Button,
@@ -34,4 +35,5 @@ export {
   Card,
   Tooltip,
   List,
+  Modal,
 }

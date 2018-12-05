@@ -21,7 +21,9 @@ export default function ButtonGroup({ children, round, outline, direction, class
     <div
       className={`${prefix} ${classes} ${aditionalClasses}`}
       {...rest}
-    >{children}</div>
+    >
+      {children}
+    </div>
   )
 }
 
@@ -29,7 +31,8 @@ ButtonGroup.defaultProps = {
   round: false,
   className: '',
   direction: 'horizontal',
-  outline: false
+  outline: false,
+  children: [],
 }
 
 ButtonGroup.propTypes = {
@@ -46,7 +49,7 @@ ButtonGroup.propTypes = {
     var error = null, prop = props[propName]
 
     if (typeof prop === 'undefined') {
-      return error = new Error(`${componentName} requires at least one button`);
+      return new Error(`${componentName} requires at least one button`);
     }
 
     React.Children.forEach(prop, (child) => {
@@ -56,5 +59,5 @@ ButtonGroup.propTypes = {
     })
 
     return error
-  }
+  },
 }
