@@ -58,7 +58,7 @@ gulp.task('rollup', async function () {
           "@babel/preset-react"
         ],
         exclude: 'node_modules/**',
-        plugins: [ '@babel/plugin-external-helpers' ],
+        plugins: [ '@babel/plugin-external-helpers', '@babel/plugin-proposal-class-properties' ],
         externalHelpers: true
       }),
       resolve(),
