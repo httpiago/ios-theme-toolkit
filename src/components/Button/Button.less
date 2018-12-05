@@ -243,3 +243,25 @@
     color: #333;
   }
 }
+
+// Botão com cor preta
+.button--black {
+  border-color: @black-color;
+  color: @black-color;
+
+  &:not(.button--fill):active {
+    background-color: fade(@black-color, 10%);
+  }
+
+  &:not(:active):focus {
+    box-shadow: 0 0 0 3px fade(@black-color, 50%);
+    z-index: 10;
+  }
+
+  // botão vermelho com preenchimento
+  &.button--fill {
+    background-color: @black-color;
+    border-color: transparent;
+    color: #FFFFFF;
+  }
+}

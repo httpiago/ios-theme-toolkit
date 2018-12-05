@@ -1,0 +1,45 @@
+---
+name: Tooltip
+route: /components/Tooltip
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Tooltip } from '../../index.js'
+import '../../../dist/styles.css'
+
+# Tooltip
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+```jsx
+import { Tooltip } from 'ios-theme-toolkit'
+
+export default () => (
+  <Tooltip text={'Hello world!'}>Hover me<Tooltip>
+)
+```
+
+## Examples
+
+<Playground>
+  <Tooltip text="Hello world!">
+    Hover me
+  </Tooltip>
+  <br/><br/>
+
+  <Tooltip withoutArrow text="Hello world!">
+    Without arrow
+  </Tooltip>
+  <br/><br/>
+
+  <Tooltip placement="right" text="Hello world!">
+    Right
+  </Tooltip>
+</Playground>
+
+## Props
+
+<PropsTable of={ Tooltip } />
+
+All the properties which are not listed above will be transferred to the \<div class="tooltip"\> tag.

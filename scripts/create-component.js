@@ -22,9 +22,9 @@ const QUESTIONS = [
  * Um array com os templates dos arquivos que devem ser criados.
  * Cada item deve ser um objeto e cada objeto deve conter duas propriedades:
  * "path" com o caminho e o nome do arquivo e "template" com o conteúdo do arquivo.
- * 
+ *
  * Use o padrão mustache (usando 4 cochetes) para substituir pelas repostas dadas pelo usuário.
- * 
+ *
  * OBSERVAÇÃO: Cuidado para não deixar "escapar" nenhum template literal ("${variable}").
  */
 const FILES = [
@@ -34,38 +34,37 @@ const FILES = [
     import React from 'react'
     import PropTypes from 'prop-types'
     import { mapClassList } from '../../Utils'
-    
+
     /**
-     * Component responsible for creating the {{componentName}}.
-     * 
+     * {{componentName}} component.
+     *
      * @since ${pkg.version}
      * @see https://httpiago.github.io/ios-theme-toolkit/#/components/{{componentName}}
      */
     export default function {{componentName}}({ children, color, className: aditionalClasses, ...rest }) {
-      
-      const prefix = 'button'
+
+      const prefix = 'card'
       const classes = mapClassList({
         // [\`\${prefix}--\${color}\`]: color,
       })
-      
+
       return (
-        <button
-          type={htmlType}
+        <div
           className={\`\${prefix} \${classes} \${aditionalClasses}\`}
           {...rest}
-        >{children}</button>
+        >{children}</div>
       )
     }
-    
-    {{componentName}}.defaultProps = {  
+
+    {{componentName}}.defaultProps = {
       className: ''
     }
-    
+
     {{componentName}}.propTypes = {
       /** Aditional classes. */
       className: PropTypes.string,
-    }    
-    
+    }
+
     `
   },
   {
@@ -74,7 +73,7 @@ const FILES = [
       @import '../../customizations.less';
 
       // Default style
-      
+
     `
   },
   {
@@ -128,7 +127,7 @@ const FILES = [
   const oldContent = fs.readFileSync('./src/index.js', 'utf8')
   const matchs = oldContent.match(/import .+ from \'.+\'/g)
   const lastImportInTheFile = RegExp(matchs[matchs.length - 1]).exec(oldContent)
-  
+
   const newContent = oldContent
     .splice(-3, 0, `\n  ${ANSWERS.componentName},`)
     .replace(lastImportInTheFile, `${lastImportInTheFile}\nimport ${ANSWERS.componentName} from \'\.\/components\/${ANSWERS.componentName}\/${ANSWERS.componentName}\'`)

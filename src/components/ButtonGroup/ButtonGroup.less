@@ -12,22 +12,7 @@
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  margin: 20px 0;
-}
-
-// Fazer os botões ficarem colados uns nos outros
-.button-group .button {
-  border-radius: 0;
-  border-left-width: 0;
-  margin: 0px !important;
-
-  &:first-child {
-    border-radius: @base-border-radius 0 0 @base-border-radius;
-    border-left-width: 1px;
-  }
-  &:last-child {
-    border-radius: 0 @base-border-radius @base-border-radius 0;
-  }
+  margin: @base-margin 0;
 }
 
 // Arredondar os cantos do primeiro e do último botão
@@ -37,5 +22,57 @@
   }
   &:last-child {
     border-radius: 0 29px 29px 0;
+  }
+}
+
+// Remover bordas externas dos botões
+.button-group--outline .button {
+  border-width: 0 0 1px !important;
+
+  &:first-child {
+    // border-radius: 29px 0 0 29px;
+  }
+  &:last-child {
+    border-bottom-width: 0 !important;
+  }
+}
+
+// Botões alinhados na horizontal
+.button-group--horizontal {
+  flex-direction: row;
+
+  // Fazer os botões ficarem colados uns nos outros
+  & .button {
+    border-radius: 0;
+    border-left-width: 0;
+    margin: 0px !important;
+
+    &:first-child {
+      border-radius: @base-border-radius 0 0 @base-border-radius;
+      border-left-width: 1px;
+    }
+    &:last-child {
+      border-radius: 0 @base-border-radius @base-border-radius 0;
+    }
+  }
+}
+
+// Botões alinhados na vertical
+.button-group--vertical {
+  flex-direction: column;
+
+  // Fazer os botões ficarem colados uns nos outros
+  & .button {
+    border-radius: 0;
+    border-top-width: 0;
+    margin: 0px !important;
+
+    &:first-child {
+      border-radius: @base-border-radius @base-border-radius 0 0;
+      border-top-width: 1px;
+    }
+    &:last-child {
+      border-radius: 0 0 @base-border-radius @base-border-radius;
+    }
   }
 }

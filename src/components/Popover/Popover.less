@@ -1,0 +1,128 @@
+@import '../../customizations.less';
+
+// Default style
+.popover {
+  background-color: #FFF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.26);
+  border-radius: 6px;
+  position: absolute;
+  max-width: 98%;
+  z-index: 10010;
+}
+
+.popover__arrow {
+  background-color: #FFF;
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  margin-left: calc(-20px / 2);
+  left: 50%;
+  top: calc(-13px / 2);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.popover__backdrop {
+  background-color: rgba(0,0,0,0.6);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 10000;
+}
+
+.popover__content {
+  max-width: 100%;
+  padding: 12px 15px;
+  overflow: hidden;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 20px;
+  color: #333;
+}
+
+// Blue popover
+.popover.popover--blue {
+  background-color: @blue-color;
+
+  & .popover__arrow {
+    background-color: @blue-color;
+  }
+
+  & .popover__content {
+    color: #FFFFFF;
+  }
+}
+
+// Red popover
+.popover.popover--red {
+  background-color: @red-color;
+
+  & .popover__arrow {
+    background-color: @red-color;
+  }
+
+  & .popover__content {
+    color: #FFFFFF;
+  }
+}
+
+// Green popover
+.popover.popover--green {
+  background-color: @green-color;
+
+  & .popover__arrow {
+    background-color: @green-color;
+  }
+
+  & .popover__content {
+    color: #FFFFFF;
+  }
+}
+
+// Yellow popover
+.popover.popover--yellow {
+  background-color: @yellow-color;
+
+  & .popover__arrow {
+    background-color: @yellow-color;
+  }
+
+  & .popover__content {
+    color: darken(@yellow-color, 40%);
+  }
+}
+
+// Gray popover
+.popover.popover--gray {
+  background-color: @gray-color;
+
+  & .popover__arrow {
+    background-color: @gray-color;
+  }
+
+  & .popover__content {
+    color: #333333;
+  }
+}
+
+// Black popover
+.popover.popover--black {
+  background-color: @black-color;
+
+  & .popover__arrow {
+    background-color: @black-color;
+  }
+
+  & .popover__content {
+    color: #FFFFFF;
+  }
+}
+
+
+.popover__content > .button-group {
+  margin: -12px -14px;
+  min-width: 120px;
+}

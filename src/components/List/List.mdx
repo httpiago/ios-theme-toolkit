@@ -1,0 +1,124 @@
+---
+name: List
+route: /components/List
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { List, Badge, Toggle, Card } from '../../index.js'
+import '../../../dist/styles.css'
+
+# List
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+```jsx
+import { List } from 'ios-theme-toolkit'
+
+export default () => (
+  <List>
+    <List.Item>1</List.Item>
+    <List.Item>2</List.Item>
+    <List.Item>3</List.Item>
+  </List>
+)
+```
+
+## Examples
+
+<Playground>
+  <span className="desc">sample:</span>
+  <List>
+    <List.Item>Item 1</List.Item>
+    <List.Item>Item 2</List.Item>
+    <List.Item>Item 3</List.Item>
+  </List>
+
+  <span className="desc">With link:</span>
+  <List>
+    <List.Item
+      href="javascript:console.log('ola1');"
+    >
+      Item 1
+    </List.Item>
+    <List.Item
+      href="javascript:console.log('ola2');"
+    >
+      Item 2
+    </List.Item>
+    <List.Item
+      href="javascript:console.log('ola3');"
+    >
+      Item 3
+    </List.Item>
+  </List>
+
+  <span className="desc">List with icons inside card:</span>
+  <Card>
+    <List>
+      <List.Item
+        media={(<Badge size="big" color="blue">I</Badge>)}
+        after="NEW"
+      >
+        Item 1
+      </List.Item>
+      <List.Item
+        media={(<Badge size="big" color="red">A</Badge>)}
+        after={(<Badge color="gray">3</Badge>)}>
+        Item 2
+      </List.Item>
+      <List.Item
+        media={(<Badge size="big" color="black">J</Badge>)}
+        after={(<Badge size="tiny" color="green"></Badge>)}
+      >
+        Item 3
+      </List.Item>
+      <List.Item
+        media={(<Badge size="big" color="yellow">M</Badge>)}
+        after={(<Toggle color="blue" defaultChecked />)}
+      >
+        Item 4
+      </List.Item>
+    </List>
+  </Card>
+
+  <span className="desc">With icons and links:</span>
+  <List>
+    <List.Item
+      media={(<Badge size="big" color="blue">I</Badge>)}
+      after="NEW"
+      href="javascript:console.log('ola1')"
+    >
+      Item 1
+    </List.Item>
+    <List.Item
+      media={(<Badge size="big" color="red">A</Badge>)}
+      after={(<Badge color="gray">3</Badge>)}
+      href="javascript:console.log('ola2')"
+    >
+      Item 2
+    </List.Item>
+    <List.Item
+      media={(<Badge size="big" color="black">J</Badge>)}
+      after={(<Badge size="tiny" color="green"></Badge>)}
+      href="javascript:console.log('ola3')"
+    >
+      Item 3
+    </List.Item>
+  </List>
+
+  <style>{".react-live-preview .desc { display: block; font-weight: bold; margin-top: 20px; }"}</style>
+  <style>{'.list__item__media .badge { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; }'}</style>
+</Playground>
+
+## List Props
+
+<PropsTable of={ List } />
+
+All the properties which are not listed above will be transferred to the \<ul class="list"\> tag.
+
+## List.Item Props
+
+<PropsTable of={ List.Item } />
+
+All the properties which are not listed above will be transferred to the \<li class="list__item"\> tag.

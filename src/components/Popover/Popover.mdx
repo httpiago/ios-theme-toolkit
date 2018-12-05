@@ -1,0 +1,92 @@
+---
+name: Popover
+route: /components/Popover
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Popover, Button, ButtonGroup } from '../../index.js'
+import '../../../dist/styles.css'
+
+# Popover
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+```jsx
+import { Popover, Button } from 'ios-theme-toolkit'
+
+const popoverContent = <span>Hello world</span>
+
+export default () => (
+  <Popover
+    content={popoverContent}
+  >
+    <Button>Open popover</Button>
+  </Popover>
+)
+```
+
+## Examples
+<Playground>
+  <span className="desc">Default position (bottom):</span>
+  <Popover content={(<span>Hello world</span>)}>
+    <Button color="blue" fill>Open popover</Button>
+  </Popover>
+
+  <span className="desc">Top:</span>
+  <Popover placement="top" content={(<span>Hello world</span>)}>
+    <Button color="blue" fill>Open popover</Button>
+  </Popover>
+
+  <span className="desc">Left:</span>
+  <Popover placement="left" content={(<span>Hello world</span>)}>
+    <Button color="blue" fill>Open popover</Button>
+  </Popover>
+
+  <span className="desc">Right:</span>
+  <Popover placement="right" content={(<span>Hello world</span>)}>
+    <Button color="blue" fill>Open popover</Button>
+  </Popover>
+
+  <span className="desc">With backdrop:</span>
+  <Popover backdrop={true} closeOnInnerClick={true} content={(<span>Hello world</span>)}>
+    <Button color="blue" fill>Open popover</Button>
+  </Popover>
+
+  <span className="desc">Hover trigger:</span>
+  <Popover trigger="hover" content={(<span>Hello world</span>)}>
+    <Button color="blue" fill>Open popover</Button>
+  </Popover>
+
+  <span className="desc">Colorful:</span>
+  <Popover color="blue" content={(<span>Hello world</span>)}><Button color="blue">Open popover</Button></Popover>
+  <Popover color="red" content={(<span>Hello world</span>)}><Button color="red">Open popover</Button></Popover>
+  <Popover color="green" content={(<span>Hello world</span>)}><Button color="green">Open popover</Button></Popover>
+  <Popover color="yellow" content={(<span>Hello world</span>)}><Button color="yellow">Open popover</Button></Popover>
+  <Popover color="gray" content={(<span>Hello world</span>)}><Button color="gray">Open popover</Button></Popover>
+  <Popover color="black" content={(<span>Hello world</span>)}><Button color="black">Open popover</Button></Popover>
+
+  <span className="desc">With buttons:</span>
+  <Popover closeOnInnerClick={true} content={(
+    <ButtonGroup direction="vertical" outline>
+      <Button autoFocus>Option 1</Button>
+      <Button>Option 2</Button>
+      <Button>Option 3</Button>
+      <Button>Option 4</Button>
+    </ButtonGroup>
+  )}>
+    <Button color="blue" fill>Open popover</Button>
+  </Popover>
+
+  <style>{".react-live-preview .desc { display: block; font-weight: bold; margin-top: 20px }"}</style>
+</Playground>
+
+#### Tip
+
+If you put some element that can receive focus (buttons, inputs ...) inside the popover, place an "autofocus" attribute on the element to keyboard-friendly navigation.
+
+## Props
+
+<PropsTable of={ Popover } />
+
+All the properties which are not listed above will be transferred to the  \<div class="popover"\> tag.

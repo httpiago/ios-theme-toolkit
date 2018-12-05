@@ -1,0 +1,18 @@
+@import '../../customizations.less';
+
+// Default style
+@tooltip-opacity: .72;
+.tooltip {
+  opacity: @tooltip-opacity;
+  animation: tooltip-show 280ms ease;
+  pointer-events: none;
+}
+
+.tooltip .popover__content {
+  padding: 8px 12px;
+}
+
+@keyframes tooltip-show {
+  from { opacity: 0; }
+  to { opacity: @tooltip-opacity; }
+}

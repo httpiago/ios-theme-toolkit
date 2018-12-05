@@ -13,9 +13,9 @@
   outline: 0;
   display: block;
   padding: 0 0;
-  margin: 0;
-  line-height: 36px;
-  height: 36px;
+  margin: @base-margin 0;
+  line-height: 24px;
+  height: initial;
   resize: none;
   font-family: @font-family;
   font-size: @font-size + 2;
@@ -30,7 +30,7 @@ textarea.input-text {
 // Caixa de texto com fundo
 .input-text--fill {
   background-color: rgba(0, 0, 0, .12);
-  padding: 0 12px;
+  padding: (@base-padding - 7) @base-padding;
 
   // Somente dar foco quando o input tiver a classe input--fill
   &:focus {

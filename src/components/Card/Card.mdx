@@ -1,0 +1,74 @@
+---
+name: Card
+route: /components/Card
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Card, Avatar, Button, ButtonGroup, Popover } from '../../index.js'
+import '../../../dist/styles.css'
+
+# Card
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+```jsx
+import { Card } from 'ios-theme-toolkit'
+
+export default () => (
+  <Card>Hello world!</Card>
+)
+```
+
+## Examples
+
+<Playground>
+  <Card
+    header={'Header'}
+    footer={'Footer'}
+    style={{ display: 'inline-block'}}
+  >
+    Default card style
+  </Card>
+
+  <Card outline style={{ display: 'inline-block'}}>Outline card</Card>
+
+  <Card shadow style={{ display: 'inline-block'}}>Shadow card</Card>
+
+  <Card style={{ maxWidth: 400 }}>
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: 8 }}>
+      <Avatar src="https://uinames.com/api/photos/male/6.jpg" round />
+      <b style={{ marginLeft: 15, fontSize: 14, marginRight: 'auto' }}>James</b>
+
+      <Popover closeOnInnerClick={true} content={(
+        <ButtonGroup direction="vertical" outline>
+          <Button>Copy post link</Button>
+          <Button>Edit</Button>
+          <Button>Delete</Button>
+        </ButtonGroup>
+      )}>
+        <Button onlyIcon outline><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></Button>
+      </Popover>
+    </div>
+
+    <div>Hello world!</div>
+
+    <img src="http://lorempixel.com/1000/600/nature/3/" style={{
+      display: 'block',
+      width: 'calc(100% + 30px)',
+      margin: '8px -15px 15px'
+    }}/>
+
+    <div style={{ display: 'flex' }}>
+      <Button color="red" outline>Like</Button>
+      <Button color="green" outline>Comment</Button>
+      <Button color="blue" outline>Share</Button>
+    </div>
+  </Card>
+</Playground>
+
+## Props
+
+<PropsTable of={ Card } />
+
+All the properties which are not listed above will be transferred to the \<div class="card"\> tag.

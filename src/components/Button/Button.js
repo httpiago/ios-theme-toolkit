@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { mapClassList } from '../../Utils'
 
 /**
- * Component responsible for creating the Button.
+ * Button component.
  *
  * @since 0.1.0
  * @see https://httpiago.github.io/ios-theme-toolkit/#/components/Button
@@ -68,7 +68,7 @@ Button.propTypes = {
   /** Button with or not round edges. */
   round: PropTypes.bool,
   /** Button color. */
-  color: PropTypes.oneOf([ 'default', 'blue', 'red', 'green', 'yellow', 'gray', 'white' ]),
+  color: PropTypes.oneOf([ 'default', 'blue', 'red', 'green', 'yellow', 'gray', 'white', 'black' ]),
   /** Size of the button. */
   size: PropTypes.oneOf([ 'default', 'small', 'big' ]),
   /** Fit button width to its parent width. */

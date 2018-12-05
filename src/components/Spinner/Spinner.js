@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { mapClassList } from '../../Utils'
 
 /**
- * Component responsible for creating the Spinner.
+ * Spinner component.
  * 
  * @since 0.1.0
  * @see https://httpiago.github.io/ios-theme-toolkit/#/components/Spinner

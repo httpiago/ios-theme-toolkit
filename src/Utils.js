@@ -9,7 +9,7 @@
  *   [`button--fill`]: fill,
  * })
  */
-export function mapClassList(classesObj) {
+export function mapClassList(classesObj = {}) {
   return Object.entries(classesObj)
     .map(([klass, prop]) => {
       return (typeof prop !== 'undefined' && typeof prop !== 'number' && prop !== false && prop !== 'default') ? klass : false
@@ -17,3 +17,14 @@ export function mapClassList(classesObj) {
     .filter(item => (item !== false))
     .join(' ')
 }
+
+
+/**
+ * @export
+ * @const {boolean}
+ */
+export const canUseDOM = !!(
+  typeof window !== 'undefined' &&
+  window.document &&
+  window.document.createElement
+)

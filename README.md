@@ -68,17 +68,14 @@ View list of well-documented commands in [gulpfile.js](/gulpfile.js).
 - [ ] Adicionar mais variações de input na documentação.
 
 ### New components to be made:
-- Select
-- Cards
-- List
-- Tooltip
 - Toast
 - Modal
   - Alert
   - Confirm
-  - ...
+  - Prompt
+  - Vertical buttons
+  - Custom modals
 - Action sheet
-- Popover
 
 ## FAQ
 

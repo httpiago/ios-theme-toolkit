@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import { mapClassList } from '../../Utils'
 
 /**
- * Component responsible for creating the Toggle.
+ * Toggle component.
  *
  * @since 0.1.0
  * @see https://httpiago.github.io/ios-theme-toolkit/#/components/Toggle
  */
-export default function Toggle({ checked, color, size, className: aditionalClasses, ...rest }) {
+export default function Toggle({ color, size, className: aditionalClasses, ...rest }) {
 
   const prefix = 'toggle'
   const classes = mapClassList({
@@ -17,15 +17,14 @@ export default function Toggle({ checked, color, size, className: aditionalClass
   })
 
   return (
-    <React.Fragment>
+    <label>
       <input
         type="checkbox"
         className={`${prefix} ${classes} ${aditionalClasses}`}
-        checked={checked}
         {...rest}
       />
       <div className="toggle__icon" />
-    </React.Fragment>
+    </label>
   )
 }
 
@@ -36,12 +35,18 @@ Toggle.defaultProps = {
 }
 
 Toggle.propTypes = {
-  /** State of checkbox */
-  checked: PropTypes.bool.isRequired,
+  /** Aditional classes. */
+  className: PropTypes.string,
+  /** The checked state for CONTROLLED components. */
+  checked: PropTypes.bool,
+  /** The initial state value for UNCONTROLLED components. */
+  defaultChecked: PropTypes.bool,
+  /** Disable or not the toggle. */
+  disabled: PropTypes.bool,
   /** Color of progress bar. */
   color: PropTypes.oneOf([ 'default', 'blue', 'red', 'green', 'yellow', 'gray' ]),
   /** size of toggle */
   size: PropTypes.oneOf([ 'default', 'small', 'big' ]),
-  /** Aditional classes. */
-  className: PropTypes.string
+
+  onChange: PropTypes.func
 }

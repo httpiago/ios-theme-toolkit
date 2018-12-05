@@ -1,9 +1,10 @@
 {
   "name": "ios-theme-toolkit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A simple package of components in React that follow the style guide of iOS for you to use in your web apps.",
   "author": "Iago bruno <httpiago@gmail.com> (https://www.iagobruno.com)",
   "repository": "github:httpiago/ios-theme-toolkit",
+  "homepage": "https://httpiago.github.io/ios-theme-toolkit/",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -12,9 +13,9 @@
     "dev": "gulp watch",
     "build": "gulp build",
     "docz": "docz dev",
-    "deploy": "yarn run build && docz build",
+    "deploy": "yarn run build && docz build && gh-pages -d .docz/dist",
     "prepublish": "yarn run build",
-    "prepush": "yarn run deploy && gh-pages -d .docz/dist"
+    "prepush": "yarn run deploy"
   },
   "devDependencies": {
     "@babel/plugin-external-helpers": "^7.0.0",
