@@ -39,7 +39,7 @@ export default function Modal({ visible, type, content, title, footer, backdrop,
           <div className="modal__content">{content}</div>
 
           <ButtonGroup
-            direction={verticalButtons ? 'vertical' : 'horizontal'}
+            vertical={verticalButtons}
             className="modal__buttons"
           >
             {buttons}

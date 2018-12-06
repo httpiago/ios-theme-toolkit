@@ -8,13 +8,13 @@ import { mapClassList } from '../../Utils'
  * @since 0.1.0
  * @see https://httpiago.github.io/ios-theme-toolkit/#/components/ButtonGroup
  */
-export default function ButtonGroup({ children, round, outline, direction, className: aditionalClasses, ...rest }) {
+export default function ButtonGroup({ children, round, outline, vertical, className: aditionalClasses, ...rest }) {
 
   const prefix = 'button-group'
   const classes = mapClassList({
     [`${prefix}--round`]: round,
     [`${prefix}--outline`]: outline,
-    [`${prefix}--${direction}`]: direction,
+    [`${prefix}--${vertical ? 'vertical' : 'horizontal'}`]: true,
   })
 
   return (
@@ -30,7 +30,7 @@ export default function ButtonGroup({ children, round, outline, direction, class
 ButtonGroup.defaultProps = {
   round: false,
   className: '',
-  direction: 'horizontal',
+  vertical: false,
   outline: false,
   children: [],
 }
@@ -41,7 +41,7 @@ ButtonGroup.propTypes = {
   /** Remove external borders */
   outline: PropTypes.bool,
   /** Position of the buttons */
-  direction: PropTypes.oneOf([ 'vertical', 'horizontal' ]),
+  vertical: PropTypes.bool,
   /** Aditional classes. */
   className: PropTypes.string,
   /** The Buttons. (Only accepts "Button" components as children") */

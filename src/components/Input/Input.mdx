@@ -35,6 +35,8 @@ export default () => (
   <Input
     fill
     placeholder="Type your email"
+    onEnter={e => alert('your email: ' + e.target.value)}
+    onCancel={e => alert('canceled')}
   />
 
   <span className="desc">Textarea:</span>

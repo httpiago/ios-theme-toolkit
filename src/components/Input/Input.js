@@ -8,7 +8,7 @@ import { mapClassList } from '../../Utils'
  * @since 0.1.0
  * @see https://httpiago.github.io/ios-theme-toolkit/#/components/Input
  */
-export default function Input({ htmlType, autosize, fill, error, round, block, className: aditionalClasses, ...rest }) {
+export default function Input({ htmlType, autosize, fill, error, round, block, className: aditionalClasses, onEnter, onCancel, ...rest }) {
 
   const prefix = 'input-text'
   const classes = mapClassList({
@@ -17,12 +17,18 @@ export default function Input({ htmlType, autosize, fill, error, round, block, c
     [`${prefix}--block`]: block,
     [`${prefix}--error`]: error
   })
-
+  
+  const handleKeyDown = (event) => {
+    if (event.keyCode === 13) onEnter(event)
+    else if (event.keyCode === 27 && onCancel) onCancel(event)
+  }
+  
   if (htmlType === 'textarea') {
     return (
       <textarea
         className={`${prefix} ${classes} ${aditionalClasses}`}
         autosize={String(autosize)}
+        onKeyDown={handleKeyDown}
         {...rest}
       />
     )
@@ -31,6 +37,7 @@ export default function Input({ htmlType, autosize, fill, error, round, block, c
       <input
         type={htmlType}
         className={`${prefix} ${classes} ${aditionalClasses}`}
+        onKeyDown={handleKeyDown}
         {...rest}
       />
     )
@@ -44,10 +51,10 @@ Input.defaultProps = {
   autosize: false,
   className: '',
 
+  onEnter: function(event) {},
+  onCancel: function(event) {},
   onFocus: function(event) {},
   onBlur: function(event) {},
-  onKeyDown: function(event) {},
-  onKeyUp: function(event) {}
 }
 
 Input.propTypes = {
@@ -71,8 +78,13 @@ Input.propTypes = {
   className: PropTypes.string,
   /** Set the original html type of input tag */
   htmlType: PropTypes.oneOf([ 'text', 'textarea', 'password', 'number', 'email', 'url', 'search', 'tel', 'time', 'date', 'file' ]),
-
+  /** Function that will called when user press Enter key */
+  onEnter: PropTypes.func,
+  /** Function that will called when user press ESC key */
+  onCancel: PropTypes.func,
+  
   onFocus: PropTypes.func,
+  onChange: PropTypes.func,
   onBlur: PropTypes.func,
   onKeyDown: PropTypes.func,
   onKeyUp: PropTypes.func
