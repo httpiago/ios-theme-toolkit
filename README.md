@@ -1,10 +1,12 @@
 # ios-theme-toolkit
 
-A simple package of components in React that follow the style guide of iOS for you to use in your web apps.
+A simple library of components in React that follow the style guide of iOS for you to use in your web apps.
+
+NOTE: This package is still in beta but you play around with it, but keep in mind that API can change up to version 1.0.0
 
 [![NPM](https://img.shields.io/npm/v/ios-theme-toolkit.svg)](https://www.npmjs.com/package/ios-theme-toolkit) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Documentation](https://img.shields.io/badge/Documentation-online-green.svg)](https://httpiago.github.io/ios-theme-toolkit/)
 
-> NOTE: All credits go to [@nolimits4web](https://github.com/nolimits4web), he had all the work that recreated the iOS visual identity for [Framework7](https://github.com/framework7io/Framework7), this project just extracted theses styles in a separate package and created a library of components in React on top of that. [Why?](#faq)
+> All credits go to [@nolimits4web](https://github.com/nolimits4web), he had all the work that recreated the iOS visual identity for [Framework7](https://github.com/framework7io/Framework7), this project just extracted theses styles in a separate package and created a library of components in React on top of that. [Why?](#faq)
 
 ## How to use
 
@@ -36,6 +38,8 @@ class Example extends Component {
 }
 ```
 
+See how to use the components in the [online documentation](https://httpiago.github.io/ios-theme-toolkit/).
+
 ## Libraries and tools used:
 
 - React: To create the components.
@@ -50,28 +54,13 @@ class Example extends Component {
 - `yarn run dev`: Start gulp watch.
 - `yarn run docz`: Start docz on port 8000.
 - `yarn run build`: Prepare the package to be published (Generate all final files).
-- `yarn run deploy`:  **not configured**
+- `yarn run deploy`:  Send a new documentation update to remote branch gh-pages and refresh the website.
 
 ### Gulp commands
 
 View list of well-documented commands in [gulpfile.js](/gulpfile.js).
 
-## Todo:
-
-- [x] Configurar o eslint e o .editorconfig
-- [ ] Configurar o postcss no gulp.
-- [ ] Criar um arquivo CONTRIBUTING.md
-- [ ] Criar a página inicial da documentação.
-- [ ] Criar uma página na documentação ensinando a como costumizar o pacote.
-- [ ] Página de show case.
-- [ ] Criar uma pasta "examples".
-- [ ] Adicionar mais variações de input na documentação.
-
-### New components to be made:
-
-See in [https://github.com/httpiago/ios-theme-toolkit/projects/1](https://github.com/httpiago/ios-theme-toolkit/projects/1)
-
-## FAQ
+### FAQ
 
 <details>
   <summary>Why use ios-theme-toolkit instead of Framework7?</summary>
