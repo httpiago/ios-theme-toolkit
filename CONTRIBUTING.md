@@ -30,4 +30,4 @@ Pull requests are welcome! Please keep the following in mind:
 - This package uses the [Angular Commit Guidelines](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines) to create the changelog of new releases so try to use then.
 - To match the existing code styling, use `yarn run prettier` before committing code.
 - Make sure the tests pass (yarn npm test). Your changes probably deserve new tests as well.
-- 
+- Documentation for all components is done in [.mdx files](https://github.com/mdx-js/mdx)
