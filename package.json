@@ -15,8 +15,7 @@
     "build": "gulp build",
     "docz": "docz dev",
     "deploy-docs": "docz build && gh-pages -d .docz/dist",
-    "publish": "yarn run build && yarn publish && yarn run deploy-docs",
-    "prepush": "yarn run deploy"
+    "release": "nodenv --exec release-it"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
@@ -47,6 +46,8 @@
     "gulp-plumber": "^1.2.0",
     "gulp-rename": "^1.4.0",
     "inquirer": "^6.2.0",
+    "node-env-run": "^3.0.2",
+    "release-it": "^8.3.0",
     "rollup": "^0.67.3",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-commonjs": "^9.2.0",
@@ -61,11 +62,27 @@
     "node": ">=8",
     "npm": ">=5"
   },
-  "prepush": {
-    "tasks": [
-      "yarn run prepush"
-    ]
+  "release-it": {
+    "non-interactive": false,
+    "increment": "conventional:angular",
+    "buildCommand": "yarn run build",
+    "requireCleanWorkingDir": false,
+    "github": {
+      "release": true,
+      "releaseName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    }
   },
-  "keywords": [ "react", "ui-kit", "react-components", "component", "css", "frontend", "ios" ],
+  "keywords": [
+    "react",
+    "ui-kit",
+    "react-components",
+    "component",
+    "css",
+    "frontend",
+    "ios"
+  ],
   "license": "MIT"
 }
