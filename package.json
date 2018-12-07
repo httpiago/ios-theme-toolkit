@@ -1,6 +1,6 @@
 {
   "name": "ios-theme-toolkit",
-  "version": "0.4.0",
+  "version": "0.3.1",
   "description": "A simple package of components in React that follow the style guide of iOS for you to use in your web apps.",
   "author": "Iago bruno <httpiago@gmail.com> (https://www.iagobruno.com)",
   "repository": "github:httpiago/ios-theme-toolkit",
