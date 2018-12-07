@@ -11,6 +11,18 @@ First of all, thanks for thinking of contributing to this project! 👏❤️
 - Discuss potential ways to improve the package
 - Improve existing implementation, performance, etc.
 
+## Bugs
+
+In case you've encountered a bug, please make sure:
+
+- You are using the [latest version](https://github.com/httpiago/ios-theme-toolkit/releases).
+- You have read the [documentation](https://httpiago.github.io/ios-theme-toolkit/) first, and double-checked your implementation.
+- In your issue description, please include:
+  - What you expected to see, and what happened instead.
+  - How you implemented the component (written \<Button ... >...\</Button> or screenshot).
+  - Interesting logs in console.
+  - All steps to reproduce the issue.
+
 ## Pull Request
 
 Pull requests are welcome! Please keep the following in mind:
