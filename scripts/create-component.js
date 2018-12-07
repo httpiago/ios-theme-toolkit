@@ -1,6 +1,9 @@
-const pkg = require('../package.json')
 const inquirer = require('inquirer')
 const fs = require('fs')
+
+const pkg = require('../package.json')
+const currentVersion = pkg.version.split('.')
+const nextVersion = currentVersion[0] + '.' + (Number(currentVersion[1]) + 1) + '.' + currentVersion[2]
 
 String.prototype.splice = function(start, delCount, newSubStr) {
   return this.slice(0, start) + newSubStr + this.slice(start + Math.abs(delCount));
@@ -38,7 +41,7 @@ const FILES = [
     /**
      * {{componentName}} component.
      *
-     * @since ${pkg.version}
+     * @since ${nextVersion}
      * @see https://httpiago.github.io/ios-theme-toolkit/#/components/{{componentName}}
      */
     export default function {{componentName}}({ children, color, className: aditionalClasses, ...rest }) {
