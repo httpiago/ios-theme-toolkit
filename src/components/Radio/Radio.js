@@ -44,5 +44,7 @@ Radio.propTypes = {
   /** Size of radio. */
   size: PropTypes.oneOfType([ PropTypes.number, PropTypes.oneOf([ 'default', 'small', 'big' ]) ]),
   /** https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-name */
-  name: PropTypes.string
+  name: PropTypes.string,
+  /** Callback function when user change state */
+  onChange: PropTypes.func
 }
