@@ -52,7 +52,7 @@ RangeSlider.propTypes = {
   /** The initial input value for UNCONTROLLED components */
   defaultValue: PropTypes.number,
   /** Color of the element. */
-  // color: PropTypes.oneOf([ 'default', 'blue', 'red', 'green', 'yellow', 'gray', 'white' ]),
+  // color: PropTypes.oneOf([ 'default', 'blue', 'red', 'green', 'yellow', 'gray', 'white', 'black' ]),
   /** Disable or not the range. */
   disabled: PropTypes.bool,
   /** Fit range width to its parent width. */
