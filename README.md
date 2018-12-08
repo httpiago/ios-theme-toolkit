@@ -57,6 +57,7 @@ See how to use the components in the [online documentation](https://httpiago.git
 - `yarn run build`: Prepare the package to be published (Generate all final files).
 - `yarn run deploy-docs`:  Send a new documentation update to remote branch gh-pages and refresh the website.
 - `yarn run release`: Uses [release-it](https://github.com/webpro/release-it) to:
+  - Prevent new releases without all tests running before
   - Bump package.json version
   - Create git tag
   - Push to remote Github repository

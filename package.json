@@ -15,7 +15,7 @@
     "build": "cross-env NODE_ENV=build gulp build",
     "docz": "docz dev",
     "deploy-docs": "docz build && gh-pages -d .docz/dist",
-    "release": "nodenv --exec release-it",
+    "release": "yarn run test && nodenv --exec release-it",
     "test": "jest"
   },
   "peerDependencies": {
