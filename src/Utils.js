@@ -21,10 +21,13 @@ export function mapClassList(classesObj = {}) {
 
 /**
  * @export
- * @const {boolean}
+ * @returns {boolean}
  */
-export const canUseDOM = !!(
-  typeof window !== 'undefined' &&
-  window.document &&
-  window.document.createElement
-)
+export function canUseDOM() {
+  const window = window || global.window
+  return !!(
+    typeof window !== 'undefined' &&
+    window.document &&
+    window.document.createElement
+  )
+}
