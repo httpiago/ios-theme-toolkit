@@ -8,28 +8,21 @@
  */
 import React from 'react'
 import { shallow } from 'enzyme'
-import Avatar from './Avatar'
+import Checkbox from './Checkbox'
 
 const COMPONENT = shallow(
-  <Avatar src="https://randomuser.me/api/portraits/women/94.jpg" className="aditionalClass" />
+  <Checkbox className="aditionalClass" />
 )
 
-describe('Test Avatar component', () => {
+describe('Test Checkbox component', () => {
   it('should render correctly based on last snapshot', () => {
     expect(COMPONENT).toMatchSnapshot()
   })
 
   it('should update correctly', () => {
-    COMPONENT.setProps({ round: true })
+    COMPONENT.setProps({ color: 'green' })
 
-    expect(COMPONENT.hasClass('avatar--round')).toBeTruthy()
-  })
-
-  it('should can be a custom size', () => {
-    COMPONENT.setProps({ size: 250 })
-
-    expect(COMPONENT.html()).toContain('height:250px')
-    expect(COMPONENT.html()).toContain('width:250px')
+    expect(COMPONENT.hasClass('checkbox--green')).toBeTruthy()
   })
 
   it('should has aditional classes', () => {
@@ -41,9 +34,18 @@ describe('Test Avatar component', () => {
 
     expect(COMPONENT.html()).toContain('data-custom-attr="yes"')
   })
+  
+  it('should can be a custom size', () => {
+    COMPONENT.setProps({ size: 250 })
 
-  it('should return a img tag', () => {
-    expect(COMPONENT.type()).toEqual('img')
+    expect(COMPONENT.html()).toContain('height:250px')
+    expect(COMPONENT.html()).toContain('width:250px')
+  })
+
+  it('should return a input', () => {
+    expect(COMPONENT.type()).toEqual('input')
+    
+    expect(COMPONENT.html()).toContain('type="checkbox"')
   })
 
 })
