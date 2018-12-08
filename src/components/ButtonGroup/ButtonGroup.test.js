@@ -8,13 +8,18 @@
  */
 import React from 'react'
 import { shallow } from 'enzyme'
-import Avatar from './Avatar'
+import ButtonGroup from './ButtonGroup'
+import Button from '../Button/Button'
 
 const COMPONENT = shallow(
-  <Avatar src="https://randomuser.me/api/portraits/women/94.jpg" className="aditionalClass" />
+  <ButtonGroup className="aditionalClass">
+    <Button>Button 1</Button>
+    <Button>Button 2</Button>
+    <Button>Button 3</Button>
+  </ButtonGroup>
 )
 
-describe('Test Avatar component', () => {
+describe('Test ButtonGroup component', () => {
   it('should render correctly based on last snapshot', () => {
     expect(COMPONENT).toMatchSnapshot()
   })
@@ -22,27 +27,23 @@ describe('Test Avatar component', () => {
   it('should update correctly', () => {
     COMPONENT.setProps({ round: true })
 
-    expect(COMPONENT.hasClass('avatar--round')).toBeTruthy()
-  })
-
-  it('should can be a custom size', () => {
-    COMPONENT.setProps({ size: 250 })
-
-    expect(COMPONENT.html()).toContain('height:250px')
+    expect(COMPONENT.hasClass('button-group--round')).toBeTruthy()
   })
 
   it('should has aditional classes', () => {
     expect(COMPONENT.hasClass('aditionalClass')).toBeTruthy()
   })
 
+  it('should render buttons as children correctly', () => {
+    expect(COMPONENT.children()).toHaveLength(3)
+
+    // expect(COMPONENT.children().first().type()).toEqual('button')
+  })
+
   it('should pass aditional props to html element', () => {
     COMPONENT.setProps({ 'data-custom-attr': 'yes' })
 
     expect(COMPONENT.html()).toContain('data-custom-attr="yes"')
-  })
-
-  it('should return a img tag', () => {
-    expect(COMPONENT.type()).toEqual('img')
   })
 
 })

@@ -117,6 +117,12 @@ const FILES = [
           expect(COMPONENT.hasClass('aditionalClass')).toEqual(true)
         })
 
+        it('should pass aditional props to html element', () => {
+          COMPONENT.setProps({ 'data-custom-attr': 'yes' })
+
+          expect(COMPONENT.html()).toContain('data-custom-attr="yes"')
+        })
+
       })
 
     `

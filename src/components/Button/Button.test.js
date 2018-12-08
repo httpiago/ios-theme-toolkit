@@ -35,6 +35,12 @@ describe('Test Button component', () => {
     expect(COMPONENT.hasClass('aditionalClass')).toEqual(true)
   })
 
+  it('should pass aditional props to html element', () => {
+    COMPONENT.setProps({ 'data-custom-attr': 'yes' })
+
+    expect(COMPONENT.html()).toContain('data-custom-attr="yes"')
+  })
+
   it('should return a link ("a" tag) when prop "href" are defined', () => {
     const LINKCOMP = shallow(
       <Button href="https://www.iagobruno.com" />

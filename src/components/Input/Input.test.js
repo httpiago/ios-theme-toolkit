@@ -29,6 +29,12 @@ describe('Test Input component', () => {
     expect(COMPONENT.hasClass('aditionalClass')).toEqual(true)
   })
 
+  it('should pass aditional props to html element', () => {
+    COMPONENT.setProps({ 'data-custom-attr': 'yes' })
+
+    expect(COMPONENT.html()).toContain('data-custom-attr="yes"')
+  })
+
   it('should return a textarea tag when prop "htmlType" are defined as "textarea"', () => {
     const TEXTAREACOMP = shallow(
       <Input htmlType="textarea" defaultValue="" />

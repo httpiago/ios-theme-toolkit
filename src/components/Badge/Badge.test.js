@@ -29,6 +29,12 @@ describe('Test Badge component', () => {
     expect(COMPONENT.hasClass('aditionalClass')).toBeTruthy()
   })
 
+  it('should pass aditional props to html element', () => {
+    COMPONENT.setProps({ 'data-custom-attr': 'yes' })
+
+    expect(COMPONENT.html()).toContain('data-custom-attr="yes"')
+  })
+
   it('should not render children when "size" prop are defined as "tiny"', () => {
     COMPONENT.setProps({ size: 'tiny' })
 
