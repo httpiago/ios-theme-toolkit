@@ -80,6 +80,48 @@ const FILES = [
     `
   },
   {
+    path: './src/components/{{componentName}}/{{componentName}}.test.js',
+    template: `
+      /**
+       * TEST FILE
+       * Please try writing the tests for all component behaviors,
+       * manually call the functions within the class, change the properties...
+       *
+       * @see https://jestjs.io/docs/en/expect
+       * @see https://github.com/airbnb/enzyme/tree/master/docs/api
+       */
+      import React from 'react'
+      import { shallow } from 'enzyme'
+      import {{componentName}} from './{{componentName}}'
+
+      const COMPONENT = shallow(
+        <{{componentName}} className="aditionalClass">content test</{{componentName}}>
+      )
+
+      describe('Test {{componentName}} component', () => {
+        it('should render correctly based on last snapshot', () => {
+          expect(COMPONENT).toMatchSnapshot()
+        })
+
+        // it('should update correctly', () => {
+        //   COMPONENT.setProps({ color: "green" })
+
+        //   expect(COMPONENT.hasClass('button--green')).toEqual(true)
+        // })
+
+        // it('should renders children correctly', () => {
+        //   expect(COMPONENT.text()).toContain('content test')
+        // })
+
+        it('should has aditional classes', () => {
+          expect(COMPONENT.hasClass('aditionalClass')).toEqual(true)
+        })
+
+      })
+
+    `
+  },
+  {
     path: './src/components/{{componentName}}/{{componentName}}.mdx',
     template: `
       ---
@@ -114,7 +156,7 @@ const FILES = [
 
       <PropsTable of={ {{componentName}} } />
 
-      All the properties which are not listed above will be transferred to the element tag, so, It accepts all props which native button support.
+      All the properties which are not listed above will be transferred to the element tag, so, It accepts all props which native element support.
     `
   }
 ]

@@ -51,7 +51,7 @@ See how to use the components in the [online documentation](https://httpiago.git
 
 ## CLI Commands
 
-- `yarn run create-component`:  Create a new component inside the "./src/components" folder with all the .js, .less and .mdx files already configured.
+- `yarn run create-component`:  Create a new component inside the "./src/components" folder with all the .js, .less, .test.js and .mdx files already configured.
 - `yarn run dev`: Start gulp watch.
 - `yarn run docz`: Start docz on port 8000.
 - `yarn run build`: Prepare the package to be published (Generate all final files).
