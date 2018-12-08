@@ -17,12 +17,12 @@ export default function Input({ htmlType, autosize, fill, error, round, block, c
     [`${prefix}--block`]: block,
     [`${prefix}--error`]: error
   })
-  
+
   const handleKeyDown = (event) => {
-    if (event.keyCode === 13) onEnter(event)
+    if (event.keyCode === 13 && onEnter) onEnter(event)
     else if (event.keyCode === 27 && onCancel) onCancel(event)
   }
-  
+
   if (htmlType === 'textarea') {
     return (
       <textarea
@@ -82,7 +82,7 @@ Input.propTypes = {
   onEnter: PropTypes.func,
   /** Function that will called when user press ESC key */
   onCancel: PropTypes.func,
-  
+
   onFocus: PropTypes.func,
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
