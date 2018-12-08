@@ -8,13 +8,13 @@
  */
 import React from 'react'
 import { shallow } from 'enzyme'
-import Radio from './Radio'
+import Toggle from './Toggle'
 
 const COMPONENT = shallow(
-  <Radio checked={false} onChange={() => {}} className="aditionalClass" />
+  <Toggle checked={false} onChange={() => {}} className="aditionalClass" />
 )
 
-describe('Test Radio component', () => {
+describe('Test Toggle component', () => {
   it('should render correctly based on last snapshot', () => {
     expect(COMPONENT).toMatchSnapshot()
   })
@@ -26,7 +26,7 @@ describe('Test Radio component', () => {
   })
 
   it('should has aditional classes', () => {
-    expect(COMPONENT.hasClass('aditionalClass')).toBeTruthy()
+    expect(COMPONENT.find('.toggle').hasClass('aditionalClass')).toBeTruthy()
   })
 
   it('should pass aditional props to html element', () => {
@@ -35,17 +35,10 @@ describe('Test Radio component', () => {
     expect(COMPONENT.html()).toContain('data-custom-attr="yes"')
   })
 
-  it('should return a input[type="radio"] tag', () => {
-    expect(COMPONENT.type()).toEqual('input')
-    
-    expect(COMPONENT.html()).toContain('type="radio"')
-  })
+  it('should return a input[type="checkbox"] tag', () => {
+    expect(COMPONENT.find('.toggle').type()).toEqual('input')
 
-  it('should can be a custom size', () => {
-    COMPONENT.setProps({ size: 250 })
-
-    expect(COMPONENT.html()).toContain('height:250px')
-    expect(COMPONENT.html()).toContain('width:250px')
+    expect(COMPONENT.find('.toggle').html()).toContain('type="checkbox"')
   })
 
 })

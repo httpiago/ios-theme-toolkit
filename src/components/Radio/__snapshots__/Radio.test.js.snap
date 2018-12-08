@@ -4,7 +4,7 @@ exports[`Test Radio component should render correctly based on last snapshot 1`]
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Radio
-    checked={true}
+    checked={false}
     className="aditionalClass"
     color="default"
     onChange={[Function]}
@@ -23,7 +23,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "checked": true,
+      "checked": false,
       "className": "radio  aditionalClass",
       "onChange": [Function],
       "style": Object {},
@@ -39,7 +39,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "checked": true,
+        "checked": false,
         "className": "radio  aditionalClass",
         "onChange": [Function],
         "style": Object {},
