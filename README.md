@@ -4,7 +4,10 @@ A simple library of components in React that follow the style guide of iOS for y
 
 NOTE: This package is still in beta but you play around with it, but keep in mind that API can change up to version 1.0.0
 
-[![NPM](https://img.shields.io/npm/v/ios-theme-toolkit.svg)](https://www.npmjs.com/package/ios-theme-toolkit) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Documentation](https://img.shields.io/badge/Documentation-online-green.svg)](https://httpiago.github.io/ios-theme-toolkit/)
+[![NPM](https://img.shields.io/npm/v/ios-theme-toolkit.svg)](https://www.npmjs.com/package/ios-theme-toolkit)
+[![Build Status](https://travis-ci.org/httpiago/ios-theme-toolkit.svg?branch=master)](https://travis-ci.org/httpiago/ios-theme-toolkit)
+[![Documentation](https://img.shields.io/badge/Documentation-online-brightgreen.svg)](https://httpiago.github.io/ios-theme-toolkit/)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > All credits go to [@nolimits4web](https://github.com/nolimits4web), he had all the work that recreated the iOS visual identity for [Framework7](https://github.com/framework7io/Framework7), this project just extracted theses styles in a separate package and created a library of components in React on top of that. [Why?](#faq)
 
@@ -51,12 +54,14 @@ See how to use the components in the [online documentation](https://httpiago.git
 
 ## CLI Commands
 
-- `yarn run create-component`:  Create a new component inside the "./src/components" folder with all the .js, .less and .mdx files already configured.
+- `yarn run create-component`:  Create a new component inside the "./src/components" folder with all the .js, .less, .test.js and .mdx files already configured.
+- `yarn run test`: Run all tests of project.
 - `yarn run dev`: Start gulp watch.
 - `yarn run docz`: Start docz on port 8000.
 - `yarn run build`: Prepare the package to be published (Generate all final files).
 - `yarn run deploy-docs`:  Send a new documentation update to remote branch gh-pages and refresh the website.
 - `yarn run release`: Uses [release-it](https://github.com/webpro/release-it) to:
+  - Prevent new releases without all tests running before
   - Bump package.json version
   - Create git tag
   - Push to remote Github repository

@@ -11,8 +11,7 @@ import { mapClassList } from '../../Utils'
 export default function List({ children, className: aditionalClasses, ...rest }) {
 
   const prefix = 'list'
-  const classes = mapClassList({
-  })
+  const classes = ''//mapClassList({})
 
   return (
     <ul

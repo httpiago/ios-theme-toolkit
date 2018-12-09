@@ -51,15 +51,8 @@ gulp.task('rollup', async function () {
     plugins: [
       external(),
       babel({
-        "presets": [
-          ["@babel/preset-env", {
-            "modules": false
-          }],
-          "@babel/preset-react"
-        ],
-        exclude: 'node_modules/**',
-        plugins: [ '@babel/plugin-external-helpers', '@babel/plugin-proposal-class-properties' ],
-        externalHelpers: true
+        // See all babel configs for rollup in .babelrc.env.build
+        "externalHelpers": true
       }),
       resolve(),
       commonjs()

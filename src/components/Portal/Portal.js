@@ -18,7 +18,7 @@ class Portal extends React.Component {
   }
 
   render() {
-    if (!canUseDOM) return null
+    if (!canUseDOM()) return null
 
     if (!this.props.node && !this.defaultNode) {
       this.defaultNode = document.createElement('div')
