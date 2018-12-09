@@ -28,7 +28,7 @@ In case you've encountered a bug, please make sure:
 Pull requests are welcome! Please keep the following in mind:
 
 - This package uses the [Angular Commit Guidelines](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines) to create the changelog of new releases so try to use then.
-- Simplicity is the best friend of the maintenance, if you look all the components are a just function, try to follow this pattern.
+- Simplicity is the best friend of the maintenance and performance, if you look all the components are a just stateless function, try to follow this pattern.
 - To match the existing code styling, use `yarn run prettier` before committing code.
 - Make sure the tests pass (`yarn npm test`). Your changes probably deserve new tests as well.
 - Documentation for components is done with [.mdx files](https://github.com/mdx-js/mdx) and [JsDoc](http://usejsdoc.org).
