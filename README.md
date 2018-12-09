@@ -41,7 +41,7 @@ class Example extends Component {
 }
 ```
 
-See how to use the components in the [online documentation](https://httpiago.github.io/ios-theme-toolkit/).
+See how to use the components in the [online documentation](https://httpiago.github.io/ios-theme-toolkit/) with live preview.
 
 ## Libraries and tools used:
 
@@ -103,4 +103,4 @@ Yes, basically all of these components are just CSS, but I will still document a
 
 ## License
 
-MIT © [httpiago](https://github.com/httpiago)
+MIT
