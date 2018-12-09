@@ -8,14 +8,14 @@ import { mapClassList } from '../../Utils'
  * @since 0.1.0
  * @see https://httpiago.github.io/ios-theme-toolkit/#/components/Input
  */
-export default function Input({ htmlType, autosize, fill, error, round, block, className: aditionalClasses, onEnter, onCancel, ...rest }) {
+export default function Input({ htmlType, autosize, fill, color, round, block, className: aditionalClasses, onEnter, onCancel, ...rest }) {
 
   const prefix = 'input-text'
   const classes = mapClassList({
     [`${prefix}--fill`]: fill,
     [`${prefix}--round`]: round,
     [`${prefix}--block`]: block,
-    [`${prefix}--error`]: error
+    [`${prefix}--${color}`]: color
   })
 
   const handleKeyDown = (event) => {
@@ -48,6 +48,7 @@ Input.defaultProps = {
   htmlType: 'text',
   round: false,
   block: false,
+  color: 'default',
   autosize: false,
   className: '',
 
@@ -74,6 +75,8 @@ Input.propTypes = {
   block: PropTypes.bool,
   /** Round edges. */
   round: PropTypes.bool,
+  /** Input color */
+  color: PropTypes.oneOf([ 'default', 'blue', 'red', 'green', 'yellow', 'white', 'black' ]),
   /** Aditional classes. */
   className: PropTypes.string,
   /** Set the original html type of input tag */

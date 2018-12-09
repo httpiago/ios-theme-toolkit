@@ -56,14 +56,22 @@ export default () => (
     placeholder="Input with rounded edges"
   />
 
+  <span className="desc">Colorful:</span>
+  <Input fill color="blue" defaultValue="Blue" />
+  <Input fill color="red" defaultValue="Red" />
+  <Input fill color="green" defaultValue="Green" />
+  <Input fill color="yellow" defaultValue="Yellow" />
+  <Input fill color="black" defaultValue="Black" />
+
   <span className="desc">Invalid input:</span>
   <Input
     fill
-    error
+    color="red"
     required
     defaultValue="Input invalid"
   />
-  <span className="error">Digite um valor válido</span>
+  <span className="input-text__error-msg">Digite um valor válido</span>
+
   <span className="desc">Disabled:</span>
   <Input
     fill
