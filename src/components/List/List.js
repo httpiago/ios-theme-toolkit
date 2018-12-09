@@ -17,7 +17,9 @@ export default function List({ children, className: aditionalClasses, ...rest })
     <ul
       className={`${prefix} ${classes} ${aditionalClasses}`}
       {...rest}
-    >{children}</ul>
+    >
+      {children}
+    </ul>
   )
 }
 

@@ -21,7 +21,9 @@ export default function Badge({ children, color, size, uppercase, round, classNa
     <span
       className={`${prefix} ${classes} ${aditionalClasses}`}
       {...rest}
-    >{size !== 'tiny' && children}</span>
+    >
+      {size !== 'tiny' && children}
+    </span>
   )
 }
 

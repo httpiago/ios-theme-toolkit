@@ -29,7 +29,9 @@ export default function Button({ children, htmlType, fill, outline, block, round
         className={`${prefix} ${classes} ${aditionalClasses}`}
         role="button"
         {...rest}
-      >{children}</a>
+      >
+        {children}
+      </a>
     )
   } else {
     // Return button
@@ -38,7 +40,9 @@ export default function Button({ children, htmlType, fill, outline, block, round
         type={htmlType}
         className={`${prefix} ${classes} ${aditionalClasses}`}
         {...rest}
-      >{children}</button>
+      >
+        {children}
+      </button>
     )
   }
 }

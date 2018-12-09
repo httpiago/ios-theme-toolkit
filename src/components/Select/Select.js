@@ -24,7 +24,9 @@ export default function Select({ children, block, fill, outline, className: adit
     >
       <select
         {...rest}
-      >{children}</select>
+      >
+        {children}
+      </select>
     </label>
   )
 }
