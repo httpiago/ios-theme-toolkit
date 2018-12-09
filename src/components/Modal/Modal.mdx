@@ -13,7 +13,7 @@ import ModalExample from './ModalExample'
 
 To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
 
-Note:  This component has no state (a controlled component), you must provide the visibility state of the component and close it "manually".
+Note: This component has no state (a controlled component), you must provide the visibility state and close it "manually".
 
 See more in the example below:
 
@@ -45,6 +45,7 @@ class ModalExample extends React.Component {
             <Button onClick={this.closeModal}>Close</Button>,
             <Button onClick={this.closeModal}>Hello</Button>,
           ]}
+          style={{ width: 460 }}
         />
 
         <Button fill onClick={this.openModal}>Open modal</Button>
