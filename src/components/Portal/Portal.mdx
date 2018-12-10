@@ -1,0 +1,36 @@
+---
+name: Portal
+route: /components/Portal
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import Portal from './Portal'
+
+# Portal
+
+This is used by Modal and Popover to create a [portal](https://reactjs.org/docs/portals.html) in the dom using as a normal component, if you want you can use it.
+
+```jsx
+import { Portal } from 'ios-theme-toolkit'
+
+class Exampl extends React.Component {
+  state = {
+    visible: false
+  }
+
+  render() {
+    return (this.state.visible)
+      ? (
+        <Portal>
+          <div>Hellow world</div>
+        </Portal>
+      )
+      : null
+  }
+}
+```
+
+## Props
+
+<PropsTable of={ Portal } />
