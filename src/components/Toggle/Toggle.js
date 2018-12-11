@@ -47,6 +47,6 @@ Toggle.propTypes = {
   color: PropTypes.oneOf([ 'default', 'blue', 'red', 'green', 'yellow', 'gray' ]),
   /** size of toggle */
   size: PropTypes.oneOf([ 'default', 'small', 'big' ]),
-
+  /** Function callback when user change the state */
   onChange: PropTypes.func
 }

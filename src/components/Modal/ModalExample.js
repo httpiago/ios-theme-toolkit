@@ -80,10 +80,11 @@ export default class ModalExample extends React.Component {
             <Button onClick={() => this.togglerModal(4)}>Cancel</Button>,
             <Button color="red" onClick={() => this.togglerModal(4)}>Ok</Button>,
           ]}
+          style={{ width: 400 }}
           onRequestClose={() => this.togglerModal(4)}
         />
 
-        <Button fill onClick={() => this.togglerModal(4)}>Open prompt modal</Button>
+        <Button fill onClick={() => this.togglerModal(4)}>Open prompt modal with custom width</Button>
 
         <br /><br />
 

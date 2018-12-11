@@ -4,15 +4,57 @@ route: /
 order: 5
 ---
 
-import Button from '../src/components/Button/Button.js'
-import '../src/components/Button/Button.less'
-
 # ios-theme-toolkit
 
 ### A simple package of components in React that follow the style guide of iOS for you to use in your web apps.
 
-<Button href="/get-started" fill size="big" >Get Started</Button>
-{'  '}
-<Button href="https://github.com/httpiago/ios-theme-toolkit" size="big">GitHub repository</Button>
+[![NPM](https://img.shields.io/npm/v/ios-theme-toolkit.svg)](https://www.npmjs.com/package/ios-theme-toolkit)
+[![Build Status](https://travis-ci.org/httpiago/ios-theme-toolkit.svg?branch=master)](https://travis-ci.org/httpiago/ios-theme-toolkit)
+[![GitHub Repo](https://img.shields.io/github/license/httpiago/ios-theme-toolkit.svg)](https://httpiago.github.io/ios-theme-toolkit/)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-<- Use the side menu to navigate between components.
+## Get Started
+
+Use npm or yarn to install the package in your project with one of the following commands:
+
+```bash
+yarn add ios-theme-toolkit
+```
+```bash
+npm install ios-theme-toolkit --save
+```
+
+## How to use
+
+Once installed, you can import this package anywhere in your project that is accessible to the webpack or rollup:
+
+```jsx
+import React from 'react'
+import { Button } from 'ios-theme-toolkit'
+
+export default () => (
+  <Button>Click me<Button>
+)
+```
+
+You will also need to import the styles from this package and you can do it in two ways:
+
+**Using a link tag in HTML:**
+
+```html
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/ios-theme-toolkit/dist/styles.min.css" />
+```
+
+**Or importing the css file into the global component of the project. (Make sure your bundler supports this file type.)**
+
+```js
+import 'ios-theme-toolkit/dist/styles.min.css';
+```
+
+👈 In the side panel you can see a list of all the components available for you to use in your project.
+
+## How to contribute
+
+Any help is always welcome and if you think you can improve this package, either in the code or in the documentation, please don't be shy to send a [Pull Request to me](https://github.com/httpiago/ios-theme-toolkit/pulls) or [report bugs](https://github.com/httpiago/ios-theme-toolkit/issues).
+
+In the [repository in github](https://github.com/httpiago/ios-theme-toolkit) has what you need to help.

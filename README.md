@@ -42,7 +42,7 @@ class Example extends Component {
 }
 ```
 
-See how to use the components in the [online documentation](https://httpiago.github.io/ios-theme-toolkit/).
+See how to use the components in the [online documentation](https://httpiago.github.io/ios-theme-toolkit/) with live preview.
 
 ## Libraries and tools used:
 
@@ -51,14 +51,23 @@ See how to use the components in the [online documentation](https://httpiago.git
 - gulp-less: To process the original style files in .less.
 - Docz: To do components documentation.
 - Rollup: To bundle all components in "dist" folder.
+- release-it: To automate the process of publishing a new release.
 
 ## CLI Commands
 
-- `yarn run create-component`:  Create a new component inside the "./src/components" folder with all the .js, .less and .mdx files already configured.
+- `yarn run create-component`:  Create a new component inside the "./src/components" folder with all the .js, .less, .test.js and .mdx files already configured.
+- `yarn run test`: Run all tests of project.
 - `yarn run dev`: Start gulp watch.
 - `yarn run docz`: Start docz on port 8000.
 - `yarn run build`: Prepare the package to be published (Generate all final files).
-- `yarn run deploy`:  Send a new documentation update to remote branch gh-pages and refresh the website.
+- `yarn run deploy-docs`:  Send a new documentation update to remote branch gh-pages and refresh the website.
+- `yarn run release`: Uses [release-it](https://github.com/webpro/release-it) to:
+  - Prevent new releases without all tests running before
+  - Bump package.json version
+  - Create git tag
+  - Push to remote Github repository
+  - Post new release in https://github.com/httpiago/ios-theme-toolkit/releases with changelog
+  - Publish package in npm registry
 
 ### Gulp commands
 
@@ -95,4 +104,4 @@ Yes, basically all of these components are just CSS, but I will still document a
 
 ## License
 
-MIT © [httpiago](https://github.com/httpiago)
+MIT

@@ -16,7 +16,7 @@ export default function ProgressBar({ value, height, round, color, infinite, cla
     [`${prefix}--round`]: round,
     [`${prefix}--infinite`]: infinite
   })
-  let percentage = Math.max(0, Math.min(value, 100))
+  const percentage = Math.max(0, Math.min(value, 100))
 
   return (
     <div

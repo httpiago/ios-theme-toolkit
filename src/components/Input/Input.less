@@ -62,16 +62,73 @@ textarea.input-text {
 }
 
 // Input com error
-.input-text--error {
+.input-text__error-msg {
+  font-size: 14px;
+  color: @red-color;
+}
+
+// Azul
+.input-text--blue {
+  background-color: fade(@blue-color, 12%);
+  color: @blue-color;
+
+  &.input-text--fill:focus {
+    background-color: fade(@blue-color, 25%);
+    box-shadow: 0 0 0 3px fade(@blue-color, 50%);
+  }
+}
+
+// Vrmelho
+.input-text--red {
   background-color: fade(@red-color, 12%);
   color: @red-color;
 
   &.input-text--fill:focus {
+    background-color: fade(@red-color, 25%);
     box-shadow: 0 0 0 3px fade(@red-color, 50%);
   }
+}
 
-  & + .error-msg {
-    font-size: 14px;
-    color: @red-color;
+// Amarelo
+.input-text--yellow {
+  background-color: fade(@yellow-color, 20%);
+  color: darken(@yellow-color, 15%);
+
+  &.input-text--fill:focus {
+    background-color: fade(@yellow-color, 30%);
+    box-shadow: 0 0 0 3px fade(@yellow-color, 50%);
+  }
+}
+
+// Verde
+.input-text--green {
+  background-color: fade(@green-color, 16%);
+  color: darken(@green-color, 15%);
+
+  &.input-text--fill:focus {
+    background-color: fade(@green-color, 30%);
+    box-shadow: 0 0 0 3px fade(@green-color, 50%);
+  }
+}
+
+// Preto
+.input-text--black {
+  background-color: fade(@black-color, 12%);
+  color: @black-color;
+
+  &.input-text--fill:focus {
+    background-color: fade(@black-color, 30%);
+    box-shadow: 0 0 0 3px fade(@black-color, 50%);
+  }
+}
+
+// Branco
+.input-text--white {
+  background-color: fade(@white-color, 12%);
+  color: @white-color;
+
+  &.input-text--fill:focus {
+    background-color: fade(@white-color, 25%);
+    box-shadow: 0 0 0 3px fade(@white-color, 50%);
   }
 }

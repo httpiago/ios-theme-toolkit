@@ -1,6 +1,9 @@
-const pkg = require('../package.json')
 const inquirer = require('inquirer')
 const fs = require('fs')
+
+const pkg = require('../package.json')
+const currentVersion = pkg.version.split('.')
+const nextVersion = currentVersion[0] + '.' + (Number(currentVersion[1]) + 1) + '.' + currentVersion[2]
 
 String.prototype.splice = function(start, delCount, newSubStr) {
   return this.slice(0, start) + newSubStr + this.slice(start + Math.abs(delCount));
@@ -38,7 +41,7 @@ const FILES = [
     /**
      * {{componentName}} component.
      *
-     * @since ${pkg.version}
+     * @since ${nextVersion}
      * @see https://httpiago.github.io/ios-theme-toolkit/#/components/{{componentName}}
      */
     export default function {{componentName}}({ children, color, className: aditionalClasses, ...rest }) {
@@ -77,6 +80,54 @@ const FILES = [
     `
   },
   {
+    path: './src/components/{{componentName}}/{{componentName}}.test.js',
+    template: `
+      /**
+       * TEST FILE
+       * Please try writing the tests for all component behaviors,
+       * manually call the functions within the class, change the properties...
+       *
+       * @see https://jestjs.io/docs/en/expect
+       * @see https://github.com/airbnb/enzyme/tree/master/docs/api
+       */
+      import React from 'react'
+      import { shallow } from 'enzyme'
+      import {{componentName}} from './{{componentName}}'
+
+      const COMPONENT = shallow(
+        <{{componentName}} className="aditionalClass">content test</{{componentName}}>
+      )
+
+      describe('Test {{componentName}} component', () => {
+        it('should render correctly based on last snapshot', () => {
+          expect(COMPONENT).toMatchSnapshot()
+        })
+
+        // it('should update correctly', () => {
+        //   COMPONENT.setProps({ color: "green" })
+
+        //   expect(COMPONENT.hasClass('button--green')).toEqual(true)
+        // })
+
+        // it('should renders children correctly', () => {
+        //   expect(COMPONENT.text()).toContain('content test')
+        // })
+
+        it('should has aditional classes', () => {
+          expect(COMPONENT.hasClass('aditionalClass')).toEqual(true)
+        })
+
+        it('should pass aditional props to html element', () => {
+          COMPONENT.setProps({ 'data-custom-attr': 'yes' })
+
+          expect(COMPONENT.html()).toContain('data-custom-attr="yes"')
+        })
+
+      })
+
+    `
+  },
+  {
     path: './src/components/{{componentName}}/{{componentName}}.mdx',
     template: `
       ---
@@ -111,7 +162,7 @@ const FILES = [
 
       <PropsTable of={ {{componentName}} } />
 
-      All the properties which are not listed above will be transferred to the element tag, so, It accepts all props which native button support.
+      All the properties which are not listed above will be transferred to the element tag, so, It accepts all props which native element support.
     `
   }
 ]

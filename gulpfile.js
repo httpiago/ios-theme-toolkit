@@ -1,4 +1,4 @@
-// For Gulp
+/* For Gulp */
 const gulp = require('gulp')
 const less = require('gulp-less')
 const cleanCSS = require('gulp-clean-css')
@@ -20,8 +20,8 @@ const JS_ES6_DIST_NAME = pkg.module
 const JS_COMMON_DIST_NAME = pkg.main
 
 /**
- * Concatenar todos os arquivos .less dentro da pasta "src" em um único
- * arquivo "style.css" dentro da pasta "dist".
+ * Concatenate all .less files inside the "src" folder into a single "style.css"
+ * file inside the "dist" folder.
  */
 gulp.task('compile-less-files', function () {
   return gulp.src('src/**/*.less')
@@ -32,7 +32,7 @@ gulp.task('compile-less-files', function () {
 })
 
 /**
- * Minificar o arquivo "style.css" em um novo arquivo "style.min.css".
+ * Minify the "dist/style.css" file into a new "dist/style.min.css" file.
  */
 gulp.task('minify-dist-css', function () {
   return gulp.src(`dist/${CSS_DIST_NAME}.css`)
@@ -42,24 +42,17 @@ gulp.task('minify-dist-css', function () {
 })
 
 /**
- * Fazer o "bundle" dos componentes em React e criar 2 versões, commonjs e es6 module.
+ * Make the bundle of the components and create 2 versions, commonjs and es6 module.
  */
 gulp.task('rollup', async function () {
-  // Iniciar o rollup
+  // Init rollup
   const bundle = await rollup.rollup({
     input: './src/index.js',
     plugins: [
       external(),
       babel({
-        "presets": [
-          ["@babel/preset-env", {
-            "modules": false
-          }],
-          "@babel/preset-react"
-        ],
-        exclude: 'node_modules/**',
-        plugins: [ '@babel/plugin-external-helpers', '@babel/plugin-proposal-class-properties' ],
-        externalHelpers: true
+        // See all babel configs for rollup in .babelrc.env.build
+        "externalHelpers": true
       }),
       resolve(),
       commonjs()
@@ -86,16 +79,16 @@ gulp.task('rollup', async function () {
 /**
  * BUILD
  *
- * Fazer o bundle dos componentes, processar os arquivos de estilo em .less e criar
- * uma versão minificada do arquivo de estilo processado.
+ * Make the component bundle, process the style files in .less, and create
+ * a minified version of the rendered style file.
  */
 gulp.task('build', ['rollup', 'compile-less-files', 'minify-dist-css'])
 
 /**
  * DEV MODE
  *
- * Fazer o bundle dos componentes, processar os arquivos de estilo e
- * ficar ouvindo por alterações para realizar um novo build.
+ * Make the components bundle, process the style files and
+ * listen for changes to perform a new build.
  */
 const filestoWatch = ['src/**/*.js', 'src/**/*.less']
 const tasksToRunOnChanges = ['rollup', 'compile-less-files']
