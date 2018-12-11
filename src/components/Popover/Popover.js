@@ -190,7 +190,10 @@ export default class Popover extends React.Component {
               {...rest}
             >
               {!withoutArrow && (<span className="popover__arrow" style={arrowPosition} />)}
-              <div className="popover__content" tabIndex="-1">{content}</div>
+
+              <div className="popover__content" tabIndex="-1">
+                {content}
+              </div>
             </div>
           </Portal>
         )}

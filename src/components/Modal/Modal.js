@@ -42,7 +42,7 @@ export default function Modal({ visible, type, content, title, footer, backdrop,
             vertical={verticalButtons}
             className="modal__buttons"
           >
-            {buttons}
+            {React.Children.toArray(buttons)}
           </ButtonGroup>
         </div>
       </div>

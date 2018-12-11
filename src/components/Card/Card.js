@@ -24,7 +24,11 @@ export default function Card({ children, shadow, outline, header, footer, classN
       {header && (
         <div className="card__header">{header}</div>
       )}
-      <div className="card__content">{children}</div>
+      
+      <div className="card__content">
+        {children}
+      </div>
+      
       {footer && (
         <div className="card__footer">{footer}</div>
       )}
