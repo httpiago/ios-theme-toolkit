@@ -15,7 +15,7 @@ export default {
     colors: {
       primary: '#007aff'
     },
-    showPlaygroundEditor: true,
+    showPlaygroundEditor: false,
   },
   plugins: [
     css({ preprocessor: 'postcss' }),
