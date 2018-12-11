@@ -28,7 +28,6 @@ export {
   Checkbox,
   Radio,
   RangeSlider,
-  Select,
   Badge,
   Popover,
   Portal,
