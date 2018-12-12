@@ -8,7 +8,6 @@ import Spinner from './components/Spinner/Spinner.js'
 import Checkbox from './components/Checkbox/Checkbox'
 import Radio from './components/Radio/Radio'
 import RangeSlider from './components/RangeSlider/RangeSlider'
-import Select from './components/Select/Select'
 import Badge from './components/Badge/Badge'
 import Popover from './components/Popover/Popover'
 import Portal from './components/Portal/Portal'
@@ -16,6 +15,7 @@ import Card from './components/Card/Card'
 import Tooltip from './components/Tooltip/Tooltip'
 import List from './components/List/List'
 import Modal from './components/Modal/Modal'
+import Drawer from './components/Drawer/Drawer'
 
 export {
   Button,
@@ -36,4 +36,5 @@ export {
   Tooltip,
   List,
   Modal,
+  Drawer,
 }

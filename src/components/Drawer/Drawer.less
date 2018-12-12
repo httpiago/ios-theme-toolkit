@@ -1,0 +1,71 @@
+@import '../../customizations.less';
+
+// Default style
+.drawer {
+  background-color: #efeff4;
+  padding: @base-padding (@base-padding + 5);
+  box-sizing: border-box;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  width: initial;
+  height: initial;
+  font-family: @font-family;
+  font-size: @font-size + 2;
+  line-height: @base-line-height;
+  z-index: 10015;
+  -webkit-transition: left 218ms ease, top 218ms ease, bottom 218ms ease, right 218ms ease;
+  transition: left 218ms ease, top 218ms ease, bottom 218ms ease, right 218ms ease;
+}
+
+.drawer__backdrop {
+  .backdrop-base();
+}
+
+.drawer:not(.drawer--visible) {
+  box-shadow: none !important;
+}
+
+.drawer--top {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.26);
+  max-height: 80%;
+  margin: 0 auto;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+}
+
+.drawer--left {
+  box-shadow: 2px 0 6px rgba(0,0,0,0.26);
+  max-width: 80%;
+  margin: auto 0;
+  width: 260px;
+  bottom: 0;
+  top: 0;
+  right: 100%;
+}
+
+.drawer--bottom {
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.26);
+  max-height: 80%;
+  margin: 0 auto;
+  right: 0;
+  top: 100%;
+  left: 0;
+}
+
+.drawer--right {
+  box-shadow: -2px 0 6px rgba(0,0,0,0.26);
+  max-width: 80%;
+  margin: auto 0;
+  width: 260px;
+  left: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+.drawer .list {
+  margin-left: -(@base-padding + 5);
+  margin-right: -(@base-padding + 5);
+}

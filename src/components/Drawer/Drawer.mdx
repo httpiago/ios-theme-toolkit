@@ -1,0 +1,65 @@
+---
+name: Drawer
+route: /components/Drawer
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Drawer } from '../../index.js'
+import '../../../dist/styles.css'
+import DrawerExample from './DrawerExample'
+
+# Drawer (Panel)
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+Note: This component has no state (a controlled component), you must provide the visibility state of the component and close it "manually".
+
+See more in the example below:
+
+```jsx
+import { Drawer, Button } from 'ios-theme-toolkit'
+
+export default class DrawerExample extends React.Component {
+  state = {
+    drawerVisibility: false,
+  }
+
+  openDrawer = () => {
+    this.setState({ drawerVisibility: true })
+  }
+
+  closeDrawer = () => {
+    this.setState({ drawerVisibility: false })
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <Drawer
+          visible={this.state.drawerVisibility}
+          placement="right"
+          style={{ width: 400 }}
+          onRequestClose={this.closeDrawer}
+        >
+          Hello world
+        </Drawer>
+
+        <Button fill onClick={this.openDrawer}>Open drawer</Button>
+      </React.Fragment>
+    )
+  }
+}
+```
+
+## Examples
+
+<Playground>
+  <DrawerExample />
+</Playground>
+
+## Props
+
+<PropsTable of={ Drawer } />
+
+All the properties which are not listed above will be transferred to the \<div class="drawer"/ \> tag.
