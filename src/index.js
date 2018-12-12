@@ -16,6 +16,7 @@ import Tooltip from './components/Tooltip/Tooltip'
 import List from './components/List/List'
 import Modal from './components/Modal/Modal'
 import Drawer from './components/Drawer/Drawer'
+import ActionSheet from './components/ActionSheet/ActionSheet'
 
 export {
   Button,
@@ -37,4 +38,5 @@ export {
   List,
   Modal,
   Drawer,
-}
+
+  ActionSheet,}

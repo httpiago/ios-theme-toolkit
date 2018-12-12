@@ -1,0 +1,68 @@
+---
+name: ActionSheet
+route: /components/ActionSheet
+menu: Componentes
+---
+
+import { Playground, PropsTable } from 'docz'
+import { ActionSheet } from '../../index.js'
+import '../../../dist/styles.css'
+import ActionSheetExample from './ActionSheetExample'
+
+# ActionSheet
+
+To use this component, simply import it into any file and pass the [modifiers](#/#props) in the properties.
+
+Note: This component has no state (a controlled component), you must provide the visibility state of the component and close it "manually".
+
+See more in the example below:
+
+```jsx
+import { ActionSheet, Button } from 'ios-theme-toolkit'
+
+import { Drawer, Button } from 'ios-theme-toolkit'
+
+export default class ActionSheetExample extends React.Component {
+  state = {
+    visibility: false,
+  }
+
+  openActionSheet = () => {
+    this.setState({ visibility: true })
+  }
+
+  closeActionSheet = () => {
+    this.setState({ visibility: false })
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <ActionSheet
+          visible={this.state.visibility}
+          buttons={[
+            <Button>Add to</Button>,
+            <Button>Copy link</Button>,
+            <Button color="red">Delete</Button>
+          ]}
+          onRequestClose={this.closeActionSheet}
+        />
+
+        <Button fill onClick={this.openActionSheet}>Open Action Sheet</Button>
+      </React.Fragment>
+    )
+  }
+}
+```
+
+## Examples
+
+<Playground>
+  <ActionSheetExample />
+</Playground>
+
+## Props
+
+<PropsTable of={ ActionSheet } />
+
+All the properties which are not listed above will be transferred to the element tag, so, It accepts all props which native element support.
