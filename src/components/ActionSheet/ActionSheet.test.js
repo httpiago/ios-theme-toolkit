@@ -14,6 +14,9 @@ const COMPONENT = shallow(
   <ActionSheet
     className="aditionalClass"
     visible={true}
+    buttons={[
+      <div className="button" />,
+    ]}
     onRequestClose={() => {}}
   />
 )

@@ -13,14 +13,14 @@ import Button from '../Button/Button'
 
 class ModalTest extends React.Component {
   state = { modalVisibility: false }
-  
+
   openModal = () => {
     this.setState({ modalVisibility: true })
   }
   closeModal = () => {
     this.setState({ modalVisibility: false })
   }
-  
+
   render() {
     return (
       <div>
@@ -29,33 +29,35 @@ class ModalTest extends React.Component {
           onRequestClose={() => {}}
           content={<div className="check-modal" />}
         />
-        
+
         <Button id="bttn-to-open-modal">Open modal</Button>
       </div>
     )
   }
 }
 
+// !Fazer uma forma fazer o jsdom funcionar
 import 'jsdom-global/register' // Create fake DOM
 const COMPONENT = mount(
   <ModalTest />
 )
 
-afterAll(() => {
-  COMPONENT.unmount()
-  // global.window.destroy()
-})
-
-// !Fazer uma forma fazer o jsdom funcionar
 describe.skip('Test Modal component', () => {
+  afterAll(() => {
+    COMPONENT.unmount()
+    // global.window.destroy()
+  })
+
   it('should render correctly based on last snapshot', () => {
     expect(COMPONENT).toMatchSnapshot()
   })
 
   it('should appear on screen on "visible" changed to true', () => {
     COMPONENT.find('#bttn-to-open-modal').first().simulate('click')
-    
+
     console.log('modal>', global.document)
+
+    // expect().
   })
 
 })
