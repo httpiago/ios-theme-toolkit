@@ -45,19 +45,5 @@ ButtonGroup.propTypes = {
   /** Aditional classes. */
   className: PropTypes.string,
   /** The Buttons. (Only accepts "Button" components as children") */
-  children: (props, propName, componentName) => {
-    var error = null, prop = props[propName]
-
-    if (typeof prop === 'undefined') {
-      return new Error(`${componentName} requires at least one button`);
-    }
-
-    React.Children.forEach(prop, (child) => {
-      if (typeof child.type.displayName === 'undefined' || child.type.displayName !== 'Button') {
-        error = new Error(`${componentName} only accepts "Button" component as children.`);
-      }
-    })
-
-    return error
-  },
+  children: PropTypes.node.isRequired
 }
