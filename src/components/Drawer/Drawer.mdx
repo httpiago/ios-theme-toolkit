@@ -22,28 +22,29 @@ import { Drawer, Button } from 'ios-theme-toolkit'
 
 export default class DrawerExample extends React.Component {
   state = {
-    drawerVisibility: false,
+    visibility: false,
   }
 
   openDrawer = () => {
-    this.setState({ drawerVisibility: true })
+    this.setState({ visibility: true })
   }
 
   closeDrawer = () => {
-    this.setState({ drawerVisibility: false })
+    this.setState({ visibility: false })
   }
 
   render() {
     return (
       <React.Fragment>
         <Drawer
-          visible={this.state.drawerVisibility}
+          visible={this.state.visibility}
           placement="right"
+          content={(
+            <div>Hello world</div>
+          )}
           style={{ width: 400 }}
           onRequestClose={this.closeDrawer}
-        >
-          Hello world
-        </Drawer>
+        />
 
         <Button fill onClick={this.openDrawer}>Open drawer</Button>
       </React.Fragment>

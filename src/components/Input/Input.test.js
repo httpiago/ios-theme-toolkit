@@ -22,11 +22,11 @@ describe('Test Input component', () => {
   it('should update correctly', () => {
     COMPONENT.setProps({ block: true })
 
-    expect(COMPONENT.hasClass('input-text--block')).toEqual(true)
+    expect(COMPONENT.hasClass('input-text--block')).toBeTruthy()
   })
 
   it('should has aditional classes', () => {
-    expect(COMPONENT.hasClass('aditionalClass')).toEqual(true)
+    expect(COMPONENT.hasClass('aditionalClass')).toBeTruthy()
   })
 
   it('should pass aditional props to html element', () => {

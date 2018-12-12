@@ -60,7 +60,7 @@ export default class Drawer extends React.Component {
   }
 
   render() {
-    const { children, visible, placement, backdrop, className: aditionalClasses, ...rest } = this.props
+    const { content, visible, placement, backdrop, className: aditionalClasses, onRequestClose, closeByBackdropClick, ...rest } = this.props
 
     const prefix = 'drawer'
     const classes = mapClassList({
@@ -76,7 +76,7 @@ export default class Drawer extends React.Component {
           className={`${prefix} ${classes} ${aditionalClasses} ${visible ? 'drawer--visible' : ''}`}
           {...rest}
         >
-          {children}
+          {content}
         </div>
       </Portal>
     )
@@ -95,6 +95,8 @@ Drawer.propTypes = {
   className: PropTypes.string,
   /** The visibility state of drawer */
   visible: PropTypes.bool.isRequired,
+  /** Drawer content */
+  content: PropTypes.node.isRequired,
   /** Drawer placement */
   placement: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
   /** Function that will be called when the user clicks outside of modal and in the future when pressing the esc key */

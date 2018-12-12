@@ -24,7 +24,7 @@ describe('Test Button component', () => {
   it('should update correctly', () => {
     COMPONENT.setProps({ color: "green" })
 
-    expect(COMPONENT.hasClass('button--green')).toEqual(true)
+    expect(COMPONENT.hasClass('button--green')).toBeTruthy()
   })
 
   it('should renders children correctly', () => {
@@ -32,7 +32,7 @@ describe('Test Button component', () => {
   })
 
   it('should has aditional classes', () => {
-    expect(COMPONENT.hasClass('aditionalClass')).toEqual(true)
+    expect(COMPONENT.hasClass('aditionalClass')).toBeTruthy()
   })
 
   it('should pass aditional props to html element', () => {
