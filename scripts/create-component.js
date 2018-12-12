@@ -133,7 +133,7 @@ const FILES = [
       ---
       name: {{componentName}}
       route: /components/{{componentName}}
-      menu: Componentes
+      menu: Components
       ---
 
       import { Playground, PropsTable } from 'docz'
