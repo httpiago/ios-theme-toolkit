@@ -41,10 +41,10 @@ export default class Drawer extends React.Component {
       var value = document.body.offsetWidth - drawerElement.offsetWidth
     } else if (placement == 'top') {
       var styleProp = 'bottom'
-      var value = document.body.offsetHeight - drawerElement.offsetHeight
+      var value = window.innerHeight - drawerElement.offsetHeight
     } else if (placement == 'bottom') {
       var styleProp = 'top'
-      var value = document.body.offsetHeight - drawerElement.offsetHeight
+      var value = window.innerHeight - drawerElement.offsetHeight
     }
 
     // Save for be used in closeDrawer
