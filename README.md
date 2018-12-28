@@ -41,18 +41,18 @@ class Example extends Component {
 }
 ```
 
-See how to use the components in the [online documentation](https://httpiago.github.io/ios-theme-toolkit/) with live preview.
+See how to use the components in the 📚 [online documentation](https://httpiago.github.io/ios-theme-toolkit/) with live preview.
 
 ## Libraries and tools used:
 
-- React: To create the components.
-- Gulp: To concatenate and minify style files.
-- gulp-less: To process the original style files in .less.
-- Docz: To do components documentation.
-- Rollup: To bundle all components in "dist" folder.
-- release-it: To automate the process of publishing a new release.
+- [React](https://reactjs.org/): To create the components.
+- [Gulp](https://www.npmjs.com/package/gulp): To concatenate and minify style files.
+- [Gulp-less](https://www.npmjs.com/package/gulp-less): To process the original style files in .less.
+- [Docz](https://github.com/pedronauck/docz): To do components documentation.
+- [Rollup](https://www.npmjs.com/package/rollup): To bundle all components in "dist" folder.
+- [Release-it](https://github.com/webpro/release-it): To automate the process of publishing a new release.
 
-## CLI Commands
+## CLI Commands 🤓
 
 - `yarn run create-component`:  Create a new component inside the "./src/components" folder with all the .js, .less, .test.js and .mdx files already configured.
 - `yarn run test`: Run all tests of project.
@@ -72,7 +72,7 @@ See how to use the components in the [online documentation](https://httpiago.git
 
 View list of well-documented commands in [gulpfile.js](/gulpfile.js).
 
-### FAQ
+## FAQ
 
 <details>
   <summary>Why use ios-theme-toolkit instead of Framework7?</summary>
