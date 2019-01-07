@@ -26,31 +26,38 @@ export default () => (
 
 <Playground>
   <label>
-    <Toggle defaultChecked name="toggle-demo" value="wifi" /> Green (default)
+    Green (default)
+    <Toggle defaultChecked name="toggle-demo" value="wifi" />
   </label>
 
   <label>
-    <Toggle color="blue" name="toggle-demo" value="gps" defaultChecked={true} /> Blue
+    Blue
+    <Toggle color="blue" name="toggle-demo" value="gps" defaultChecked={true} />
   </label>
 
   <label>
-    <Toggle color="red" name="toggle-demo" value="bluetooth" defaultChecked={true} disabled /> Red (Disabled)
+    Red (Disabled)
+    <Toggle color="red" name="toggle-demo" value="bluetooth" defaultChecked={true} disabled />
   </label>
 
   <label>
-    <Toggle color="yellow" name="toggle-demo" value="sync" defaultChecked={false} /> Yellow
+    Yellow
+    <Toggle color="yellow" name="toggle-demo" value="sync" defaultChecked={false} />
   </label>
 
   <label>
-    <Toggle color="gray" name="toggle-demo" value="battery" defaultChecked={true} /> Gray
+    Gray
+    <Toggle color="gray" name="toggle-demo" value="battery" defaultChecked={true} />
   </label>
 
   <label>
-    <Toggle size="small" name="toggle-demo" value="small" defaultChecked /> Small toggle
+    Small toggle
+    <Toggle size="small" name="toggle-demo" value="small" defaultChecked />
   </label>
 
   <label>
-    <Toggle size="big" name="toggle-demo" value="small" defaultChecked /> Big toggle
+    Big toggle
+    <Toggle size="big" name="toggle-demo" value="small" defaultChecked />
   </label>
 
   <style>{".react-live-preview label { display: block; padding: 6px 0; } .react-live-preview .toggle__icon { margin-right: 6px !important; }"}</style>
