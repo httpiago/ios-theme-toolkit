@@ -1,11 +1,12 @@
+# Deprecated ⚠
+
+This project will be discontinued. I recommend using the [Ionic 4](https://github.com/ionic-team/ionic-cli) that supports React well.
+
 # ios-theme-toolkit
 
 A simple library of components in React that follow the style guide of iOS for you to use in your web apps.
 
-NOTE: This package is still in beta but you play around with it, but keep in mind that API can change up to version 1.0.0
-
 [![NPM](https://img.shields.io/npm/v/ios-theme-toolkit.svg)](https://www.npmjs.com/package/ios-theme-toolkit)
-[![Build Status](https://travis-ci.org/httpiago/ios-theme-toolkit.svg?branch=master)](https://travis-ci.org/httpiago/ios-theme-toolkit)
 [![Documentation](https://img.shields.io/badge/Documentation-online-brightgreen.svg)](https://httpiago.github.io/ios-theme-toolkit/)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
