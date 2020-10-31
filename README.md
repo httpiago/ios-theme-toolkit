@@ -9,6 +9,7 @@ A simple library of components in React that follow the style guide of iOS for y
 [![NPM](https://img.shields.io/npm/v/ios-theme-toolkit.svg)](https://www.npmjs.com/package/ios-theme-toolkit)
 [![Documentation](https://img.shields.io/badge/Documentation-online-brightgreen.svg)](https://httpiago.github.io/ios-theme-toolkit/)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Contributing](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/httpiago/ios-theme-toolkit/blob/master/CONTRIBUTING.md)
 
 > All credits go to [@nolimits4web](https://github.com/nolimits4web), he had all the work that recreated the iOS visual identity for [Framework7](https://github.com/framework7io/Framework7), this project just extracted theses styles in a separate package and created a library of components in React on top of that. [Why?](#faq)
 
